@@ -1,0 +1,42 @@
+<app-banner></app-banner>
+<app-processing></app-processing>
+<p-panel i18n-header="@@login_panel_hader" header="Login" >
+<form name="form"  #loginForm="ngForm" class="ui-g" (ngSubmit)="loginForm.form.valid && login()">
+    <div class="ui-g-8 ui-g-nopad">
+        
+        <div class="ui-g-12"> <!-- needed because putting the 'ui-g-x' class messes up the display of the icon if we put it in the div that holds the 'ui-inputgroup' class -->
+            <div class="ui-inputgroup">
+                   <span class="ui-inputgroup-addon" ><i class="fa fa-user"></i></span>
+                   <input [(ngModel)]="model.username" #username="ngModel" name="username" 
+                           type="text" pInputText placeholder="Identifiant" required>         
+                   <div *ngIf="username.invalid && (username.dirty || username.touched)" >
+                       <p-message *ngIf="username.errors.required" 
+                           severity="error" 
+                           i18n-text="@@field_is_required" text="Field is required"></p-message>                
+                   </div>
+            </div>
+        </div>
+        <div class="ui-g-12" > <!-- needed because putting the 'ui-g-x' class messes up the display of the icon if we put it in the div that holds the 'ui-inputgroup' class -->
+            <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-lock"></i></span>
+                <input [(ngModel)]="model.password" #password="ngModel" name="password" type="password" pInputText placeholder="Mot de passe" required>         
+                <div *ngIf="password.invalid && (password.dirty || password.touched)" >
+                       <p-message *ngIf="password.errors.required" 
+                           severity="error"                            
+                           i18n-text="@@field_is_required" text="Field is required"></p-message>                
+                   </div>
+            </div>
+        </div>    
+    </div>
+            
+    <button pButton type="button" label="Login" class="ui-g-3" 
+        (click)="login()"
+        [disabled]="loginForm.invalid"></button>
+   
+    <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+</form>
+
+ </p-panel>
+
+
+ <app-app-version></app-app-version>

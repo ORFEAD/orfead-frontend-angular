@@ -1,0 +1,25 @@
+<!-- <app-banner></app-banner> -->
+<!-- {{translationService.allowedLanguages}} -->
+<p-menubar [model]="items">      
+    <!-- <img src="assets/img/cat.png" style="height:1em;"/> -->
+    <ng-template ngFor let-langcode [ngForOf]="translationService.allowedLanguages">
+        <span *ngIf="langcode !== translationService.getSupportedLanguageCode() && langcode != 'en'">
+          <a href="/{{langcode}}/">{{langcode}}</a> &nbsp;
+        </span>
+        <span *ngIf="langcode != translationService.getSupportedLanguageCode() && langcode == 'en'">
+            <a href="/">{{langcode}}</a> &nbsp;
+        </span>
+        <span *ngIf="langcode === translationService.getSupportedLanguageCode()">{{langcode}} &nbsp;</span>
+
+      </ng-template>
+    <app-processing></app-processing>
+    <button pButton i18n-label="@@my_account" label="Mon compte" icon="fa fa-user" class="ui-button-secondary" 
+            [routerLink]="linkToUserAccount"></button>
+    <button pButton i18n-label="@@logout" label="Logout" icon="fa fa-sign-out" class="ui-button-secondary" (click)="logout()"></button>
+  </p-menubar>
+    
+  
+
+
+
+<!-- <div style="clear:both;margin-bottom: 5px;"></div> -->

@@ -1,0 +1,1343 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="field_is_required" datatype="html">
+        <source>Field is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/login/login.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/login/login.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">149</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">186</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">221</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="login_panel_hader" datatype="html">
+        <source>Login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/login/login.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="load_latest_version" datatype="html">
+        <source>Get new version</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/misc/app-version/app-version.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a_new_version_is_available_short" datatype="html">
+        <source>New version available!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/misc/app-version/app-version.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="my_account" datatype="html">
+        <source>Mon compte</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/main-menu/main-menu.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="logout" datatype="html">
+        <source>Logout</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/main-menu/main-menu.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="anotherTranslation1" datatype="html">
+        <source>This is another translation 1</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="anotherTranslation2" datatype="html">
+        <source>This is another translation 2</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="home" datatype="html">
+        <source>Home</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dashboard" datatype="html">
+        <source>Dashboard</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="success" datatype="html">
+        <source>Success</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="deal_saved" datatype="html">
+        <source>Deal saved</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="message_saved" datatype="html">
+        <source>Message saved</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="appuser_saved" datatype="html">
+        <source>User saved</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="preview_not_available_for_this_file_type" datatype="html">
+        <source>Preview is not available for this file type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="press_esc_to_close" datatype="html">
+        <source>Press &apos;esc&apos; to close</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="design_saved" datatype="html">
+        <source>Design saved</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nice_class" datatype="html">
+        <source>Class</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nice_type" datatype="html">
+        <source>Type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="style_guide" datatype="html">
+        <source>Style guide</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="style_guide_saved" datatype="html">
+        <source>Style guide saved, you can now upload files in this style guide</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="designs" datatype="html">
+        <source>Designs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="deals" datatype="html">
+        <source>Deals</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sales_reports" datatype="html">
+        <source>Sales reports</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="trademarks" datatype="html">
+        <source>Trademarks</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="users" datatype="html">
+        <source>Users</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="companies" datatype="html">
+        <source>Companies</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="settings" datatype="html">
+        <source>Settings</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cancelled" datatype="html">
+        <source>Cancelled</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="discussed" datatype="html">
+        <source>Discussed</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="approved" datatype="html">
+        <source>Approved</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="rejected" datatype="html">
+        <source>Rejected</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="WARNING_design_has_no_reference_image_set" datatype="html">
+        <source>WARNING: design has no reference image set, approval cannot be given without one</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confirm_create_new_deal_and_not_a_renewal" datatype="html">
+        <source>Are you sure you want to create a new deal and not a renewal of an existing deal?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="header_for_dialog_to_create_new_design_forum_from_deal_page" datatype="html">
+        <source>Please give the name and type of the first design discussed in this new forum</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="creation_time" datatype="html">
+        <source>Creation time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="update_time" datatype="html">
+        <source>Update time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="style_guide_name" datatype="html">
+        <source>Style guide name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="style_guide_description" datatype="html">
+        <source>Style guide description</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="do_you_really_want_to_delete_this_style_guide" datatype="html">
+        <source>Do you really want to delete this style guide?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="style_guide_deleted" datatype="html">
+        <source>Style guide deleted</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confirmation" datatype="html">
+        <source>Confirmation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="main_menu_title_for_style_guide_companies_access" datatype="html">
+        <source>Manage accesses to style guides</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="style_guides" datatype="html">
+        <source>Style guides</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nice_types_used_by_licensee" datatype="html">
+        <source>Nice types used by licensee</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="request_time" datatype="html">
+        <source>Request time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="requester_name" datatype="html">
+        <source>User requesting style guide</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="last_editor_name" datatype="html">
+        <source>Last editor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="pending_approval" datatype="html">
+        <source>Pending Approval</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="accesses_to_style_guides_saved" datatype="html">
+        <source>Accesses to style guides saved</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="pending_request" datatype="html">
+        <source>Pending request, please wait</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="request_saved" datatype="html">
+        <source>Request registered</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="request_accepted" datatype="html">
+        <source>Request accepted</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="request_refused" datatype="html">
+        <source>Request refused</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="deal_details" datatype="html">
+        <source>Deal details</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="missing" datatype="html">
+        <source>Undefined</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="null" datatype="html">
+        <source>Undefined</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="undefined" datatype="html">
+        <source>Undefined</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="welcome_back" datatype="html">
+        <source>Welcome back</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="designs_of_deal" datatype="html">
+        <source>Designs of deal</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="company_details" datatype="html">
+        <source>Company details</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confirm_deal_approved" datatype="html">
+        <source>Do you really want to approve this deal?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confirm_deal_cancelled" datatype="html">
+        <source>Do you really want to cancel this deal?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confirm_deal_rejected" datatype="html">
+        <source>Do you really want to reject this deal?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confirm_deal_discussed" datatype="html">
+        <source>Do you really want to amend this deal? It will require a new approval.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="do_you_confirm_that_you_want_to_access_this_style_guide" datatype="html">
+        <source>Do you really want to request an access to this style guide?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="appuser_type" datatype="html">
+        <source>User type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="appuser_roles" datatype="html">
+        <source>User roles</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="company_saved" datatype="html">
+        <source>Company saved</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="trademark_name" datatype="html">
+        <source>Trademark name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="trademark_office_code" datatype="html">
+        <source>Office code</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="trademark_application_number" datatype="html">
+        <source>Application number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="trademark_registration_number" datatype="html">
+        <source>Registration number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="type" datatype="html">
+        <source>Type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="applicants" datatype="html">
+        <source>Applicants</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="application_date" datatype="html">
+        <source>Application date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registration_date" datatype="html">
+        <source>Registration date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="expiry_date" datatype="html">
+        <source>Expiry date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="intellectual_property" datatype="html">
+        <source>Intellectual property</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nice_classes" datatype="html">
+        <source>Nice classes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="trademark_saved" datatype="html">
+        <source>Trademark saved</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="filed" datatype="html">
+        <source>Filed</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="registered" datatype="html">
+        <source>Registered</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="expired" datatype="html">
+        <source>Expired</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ended" datatype="html">
+        <source>Ended</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="combined" datatype="html">
+        <source>Combined</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="word" datatype="html">
+        <source>Word</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="other" datatype="html">
+        <source>Other</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="figurative" datatype="html">
+        <source>Figurative</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="general_mark" datatype="html">
+        <source>General mark</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="_3d" datatype="html">
+        <source>3D</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="_3dshape" datatype="html">
+        <source>3D shape</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="colour" datatype="html">
+        <source>Colour</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="combination_of_colours" datatype="html">
+        <source>Combination of colours</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="hologram" datatype="html">
+        <source>Hologram</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="kennfaden" datatype="html">
+        <source>Kennfaden</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="motion" datatype="html">
+        <source>Motion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="multimedia" datatype="html">
+        <source>Multimedia</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="olfactory" datatype="html">
+        <source>Olfactory</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="packing" datatype="html">
+        <source>Packing</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="pattern" datatype="html">
+        <source>Pattern</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">96</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="position" datatype="html">
+        <source>Position</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sound" datatype="html">
+        <source>Sound</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="stylized_characters" datatype="html">
+        <source>Stylized characters</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ip" datatype="html">
+        <source>IP</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="merchandising" datatype="html">
+        <source>Merchandising</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="promotion" datatype="html">
+        <source>Promotion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nice_classification" datatype="html">
+        <source>Nice classification</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="access_rights" datatype="html">
+        <source>Access rights</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="roles_delegation_rights" datatype="html">
+        <source>Rights on roles delegation</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="no_filter" datatype="html">
+        <source>No filter</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confirm_design_approved" datatype="html">
+        <source>Do you really want to approve this design?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confirm_design_cancelled" datatype="html">
+        <source>Do you really want to cancel this design?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confirm_design_rejected" datatype="html">
+        <source>Do you really want to reject this design?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confirm_design_discussed" datatype="html">
+        <source>Do you really want to rediscuss this design?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="royalty_bases" datatype="html">
+        <source>Royalties calcultation bases</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">112</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="amount_collected_usd" datatype="html">
+        <source>Amount collected (USD)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="commission_deducted_by_agent_usd" datatype="html">
+        <source>Commission deducted (USD)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="amount_due_to_ip_owner_usd" datatype="html">
+        <source>Amount due (USD)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="period_start_date" datatype="html">
+        <source>Period start</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">116</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="period_end_date" datatype="html">
+        <source>Period end</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">117</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="description" datatype="html">
+        <source>Description</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">118</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="payment_type" datatype="html">
+        <source>Payment type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="intellectual_properties" datatype="html">
+        <source>Intellectual properties</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="approval_of_physical_sample" datatype="html">
+        <source>Approval of physical sample</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">121</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="approval_of_pictures_of_physical_sample" datatype="html">
+        <source>Approval of pictures of physical sample</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="approval_of_files_only" datatype="html">
+        <source>Approval of files only</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">123</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confirm_design_files_approved_waiting_for_preproduction_approval" datatype="html">
+        <source>Do you really want to approve the files of this design?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">124</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="files_approved_waiting_for_preproduction_approval" datatype="html">
+        <source>Files are approved, the design is now waiting for the approval of the pre-production physical sample</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">125</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="prefill_content_of_message_for_design_status_discussed" datatype="html">
+        <source>Dear all, design[#DESIGN_NAME#] is in discussion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">126</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="prefill_content_of_message_for_design_status_cancelled" datatype="html">
+        <source>Dear all, design[#DESIGN_NAME#] is cancelled</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">127</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="prefill_content_of_message_for_design_status_rejected" datatype="html">
+        <source>Dear all, design[#DESIGN_NAME#] is rejected</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">128</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="prefill_content_of_message_for_design_status_approved" datatype="html">
+        <source>
+    Dear all, design[#DESIGN_NAME#] is approved. Please send us the market sample before[#MARKET_SAMPLE_INTENDED_ARRIVAL_DATE#]</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="prefill_content_of_message_for_design_status_files_approved_waiting_for_preproduction_approval" datatype="html">
+        <source>
+    Dear all, the files of design[#DESIGN_NAME#] are approved. You can now send the pre-production sample for approval.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="authorized" datatype="html">
+        <source>Authorized</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">133</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nice_type_saved" datatype="html">
+        <source>Nice type saved</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">134</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="true" datatype="html">
+        <source>Yes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">135</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="false" datatype="html">
+        <source>No</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">136</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="do_you_really_want_to_delete_this_file_filename" datatype="html">
+        <source>Do you really want to delete this file [#FILENAME#]?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="file_deleted" datatype="html">
+        <source>File deleted</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">138</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="distribution_channel_saved" datatype="html">
+        <source>Distribution channel saved</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">139</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="royalty_calculation_basis_saved" datatype="html">
+        <source>Royalty calculation basis saved</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">140</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="intellectual_property_saved" datatype="html">
+        <source>Intellectual property saved</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">141</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="file" datatype="html">
+        <source>File</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">142</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="files" datatype="html">
+        <source>Files</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">143</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="header_for_dialog_to_create_new_design_forum_from_design_page" datatype="html">
+        <source>Please fill in the required information</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">144</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="every_3_months" datatype="html">
+        <source>Every 3 months</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">145</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="every_6_months" datatype="html">
+        <source>Every 6 months</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">146</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="flatfee" datatype="html">
+        <source>Flatfee</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">147</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="royalties" datatype="html">
+        <source>Royalties</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">148</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a_new_version_is_available_long" datatype="html">
+        <source>A new version of MERCHMGT is available (Version #VERSION_NAME#), click the button below to get it</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">149</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="deal_reference" datatype="html">
+        <source>Deal ref.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">150</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="forum_reference" datatype="html">
+        <source>Forum ref.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">151</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="too_big" datatype="html">
+        <source>Too big</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="max_size" datatype="html">
+        <source>Max authorized size</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="file_uploaded" datatype="html">
+        <source>File(s) uploaded</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">154</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="licensee_collaborator" datatype="html">
+        <source>Licensee collaborator</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">155</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="agent_collaborator" datatype="html">
+        <source>Agent collaborator</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">156</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ip_owner_collaborator" datatype="html">
+        <source>IP owner collaborator</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">157</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="announcements" datatype="html">
+        <source>Announcements</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">158</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="login" datatype="html">
+        <source>Login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="field_is_no_valid" datatype="html">
+        <source>Field is not valid</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">146</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="deactivated" datatype="html">
+        <source>Deactivated</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="password" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="firstname" datatype="html">
+        <source>Firstname</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="lastname" datatype="html">
+        <source>Lastname</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="email" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">141</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user_type" datatype="html">
+        <source>User type</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">158</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="select_the_type_of_user" datatype="html">
+        <source>Select the type of user</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">169</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="roles" datatype="html">
+        <source>Roles</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">203</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="save_appuser" datatype="html">
+        <source>Save user</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">240</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="edit_user_invite" datatype="html">
+        <source>Modify user account here</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/user-details/user-details.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="create_user" datatype="html">
+        <source>Create new user</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/users/users.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/users/users.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="choose" datatype="html">
+        <source>Choose</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/users/users.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/settings/roles/roles.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="show" datatype="html">
+        <source>Show</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/users/users.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/settings/roles/roles.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="existing_users" datatype="html">
+        <source>Existing users</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/user/users/users.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="not_available_in_this_demo" datatype="html">
+        <source>Not available in this demo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/misc/page-not-accessible/page-not-accessible.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="existing_roles" datatype="html">
+        <source>Existing roles</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/settings/roles/roles.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,56 @@
+// Needed so that we can extend some classes (eg '.forum-message-content')
+@import '../node_modules/quill/dist/quill.snow'; 
+
+// Needed so that we can extend some classes (eg. '.text-center')
+@import 'bootstrap'; 
+
+// https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp
+
+$body-background-color:#ffffff; // Change me when changing the theme
+$color-for-active-filter-input:#ebffbd ; // May need to change me when changing the theme
+
+$thumbnail-size: 6em !important;
+$font-family:"Open Sans", "Helvetica Neue", sans-serif;
+$custom-white:#fafafa;
+$custom-lightgrey:#aaaaaa;
+$custom-superlightgrey:#f5f5f5;
+
+$even-row-color: #f9f9f9;
+
+$default-row-height:10em;
+$row-height-on-dashboard:20em;
+$default-spacing:.5em;
+$row-height-on-deals-listing:10em;
+
+body {
+    background-color: $body-background-color;
+}
+
+
+.main-ip-icon + .ui-menuitem-text { 
+    background: url(assets/img/home.png) no-repeat;  
+    background-size: 1.8em;
+    color:rgba(255, 0, 0, 0)!important; // Workaround to have the text disappear
+} 
+
+.default-margin-top {
+    margin-top:$default-spacing;
+}
+
+.width-100pct {
+    width:100%;
+}
+
+// https://css-tricks.com/centering-css-complete-guide/#center-vertically
+// NOTE: We use primeflex classes instead: p-grid p-align-center vertical-container
+// .vertical-align-middle-parent {
+//     position: relative;
+//     &>:first-child {
+//         position: absolute;
+//         top: 50%;
+//         transform: translateY(-50%);
+//     }
+// }
+
+
+

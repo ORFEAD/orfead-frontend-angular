@@ -1,0 +1,3 @@
+<i *ngIf="uiBlocked" class="fas fa-spinner fa-pulse"></i>
+<span *ngIf="displayProcessesInfo">{{numberOfProcesses}} -> {{uiBlocked}}</span>
+<p-blockUI class="processing-full-page-block-ui" [blocked]="uiBlocked"></p-blockUI>
