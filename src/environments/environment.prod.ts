@@ -8,7 +8,7 @@ export const environment = {
   numberOfSecondsBetweenRefreshOfMessages: 120,
   numberOfSecondsBetweenChecksOfVersion: 120,
   frontEndVersion:"2020-06-03.01",
-  jwt_name: "merchmgt_jwt",
+  jwt_name: "orfead_jwt",
   defaultNumberOfResults:50,
   numberOfResultsForDeals: 50,
   numberOfResultsForDesigns: 25,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RoleService } from 'src/app/service/role.service';
-import { TranslationService } from 'src/app/service/translation.service';
+import { TranslationService } from 'src/app/module/translation/service/translation.service';
 import { ProcessingService } from 'src/app/service/processing.service';
 import { environment } from 'src/environments/environment';
 import { SelectItem } from 'primeng/api';

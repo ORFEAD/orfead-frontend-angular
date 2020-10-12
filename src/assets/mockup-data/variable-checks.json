@@ -1,0 +1,34 @@
+{
+    "data":[
+        {
+            "id":"value1",
+            "variable": {
+                "id": "e3ej3i-e3e3i-deodkeo-223"
+            },   
+            "algoValue":34,
+            "currentBestValue":35,
+            "checks":[
+                {
+                    "id":"check1",
+                    "checkTime":"2020-09-01 13:40:00",
+                    "user":{
+                        "id":"user1",
+                        "firstname":"vincent",
+                        "lastname":"laugier"
+                    },
+                    "userValue":35
+                },
+                {
+                    "id":"check2",
+                    "checkTime":"2020-09-03 15:40:00",
+                    "user":{
+                        "id":"user2",
+                        "firstname":"andré",
+                        "lastname":"marnuoin"
+                    },
+                    "userValue":34
+                }
+            ]
+        }
+    ]
+}

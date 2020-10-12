@@ -3,7 +3,7 @@ import {MenubarModule,MenuItem} from 'primeng/primeng';
 import {Router} from '@angular/router';
 import { AuthenticationService } from '../../service/authentication.service';
 import xml2js from 'xml2js'; // we needed to install 
-import { TranslationService } from '../../service/translation.service';
+import { TranslationService } from 'src/app/module/translation/service/translation.service';
 import { YoohooService } from 'src/app/service/yoohoo.service';
 import { ROLE_CODE_NAME } from 'src/app/enum/ROLE_CODE_NAME';
 import { environment } from 'src/environments/environment';
@@ -36,9 +36,14 @@ export class MainMenuComponent implements OnInit {
                 routerLink: ['/']
             },
             {
-                label: this.translationService.getTranslation('i18n@@home'),
-                icon: 'fas fa-home',
+                label: this.translationService.getTranslation('i18n@@upload'),
+                icon: 'fas fa-file-upload',
                 routerLink: ['/']
+            },
+            {
+                label: this.translationService.getTranslation('i18n@@data_qualification'),
+                icon: 'fas fa-check-circle',
+                routerLink: ['/data-qualification']
             }
         ];
       

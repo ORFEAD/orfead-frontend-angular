@@ -1,0 +1,26 @@
+{
+    "data":[
+        {
+            "id":"value1",
+            "variable": {
+                "id": "e3ej3i-e3e3i-deodkeo-223",
+                "name": "itt"
+            },            
+            "algoValue": 34,
+            "currentBestValue": 35,
+            "sources":[
+                {
+                    "id": "source1",
+                    "name": "conclusion",
+                    "value": "On évalue l'ITT à 23j"
+                },
+                {
+                    "id": "source2",
+                    "name": "commentaire",
+                    "value": "L'ITT avait précédemment \nété estimée à 3j"
+                }
+            ]
+            
+        }
+    ]
+}

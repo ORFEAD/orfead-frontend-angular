@@ -1,0 +1,79 @@
+<p-panel *ngIf="variableValue" header="Affecter une valeur à la variable '{{variable.name}}' sur la base des valeurs sources fournies">
+
+
+    <div class="p-grid">        
+        <ng-container *ngFor="let src of srcValues">
+            <div class="p-col-6">
+
+                <p-card header="{{src.variable.name}}" class="source-value-container">
+                    <!-- <pre>{{src.valueAsStr}}</pre> -->
+                    {{src.valueAsStr}}
+                </p-card>
+   
+            </div>
+        </ng-container>
+
+        
+
+        <div class="p-col-12">
+            <div class="p-grid ">
+                <div class="p-col-2 p-d-flex p-ai-center">                    
+                        <button pButton type="button" *ngIf="canDisplayPreviousValueButton"
+                            i18n-label="@@save_and_go_to_prev_value" label="Enregistrer et revenir à la valeur précédente" 
+                            class="p-as-center" icon="fas fa-angle-left"></button>
+                </div>
+                <div class="p-col-8">
+                    <div class="ui-fluid" style="margin-top:1em;">
+
+                        <div class="p-fluid p-formgrid p-grid">
+                            <!-- The two radio buttons to tell if the model has changed or not -->
+                            <div class="p-col">
+                                <div class="p-field-radiobutton">                            
+                                    <p-radioButton name="valueIsNotMissing" (onClick)="valueIsNotMissingHandler($event)"
+                                        inputId="valueIsNotMissingTrue" [value]="true" 
+                                        [(ngModel)]="valueIsNotMissing"></p-radioButton>
+                                    <label i18n="@@value_is_not_missing" for="valueIsNotMissingTrue">La valeur est présente</label>                                    
+                                </div> 
+        
+                                <div class="p-field-radiobutton">
+                                    <p-radioButton name="valueIsNotMissing" (onClick)="valueIsNotMissingHandler($event)"
+                                        inputId="valueIsNotMissingFalse" [value]="false" 
+                                        [(ngModel)]="valueIsNotMissing"></p-radioButton>
+                                    <label i18n="@@value_is_missing" for="valueIsNotMissingTrue">La valeur est manquante</label>                                    
+                                </div>
+                            </div>
+
+                             <!-- The value input widgets for all different types of values -->
+                            <div class="p-col">
+
+                                <div class="p-field p-grid" *ngIf="canDisplayInput">
+                                    <label for="variableValue">{{variable.name}} : </label>
+                                    <!-- <input id="firstname4" type="text" pInputText>                                     -->
+                                    <p-dropdown id="variableValue" [options]="boolSelectItems" 
+                                        [(ngModel)]="boolValue" 
+                                         *ngIf="canDisplayBooleanInput"
+                                        appendTo="body" (onChange)="handleChangeOntargetValue($event)"></p-dropdown>
+                                    <p-inputNumber [(ngModel)]="integerValue" 
+                                    *ngIf="canDisplayIntegerInput" mode="decimal"></p-inputNumber>
+                                </div>  
+                                
+                            </div>
+
+                        </div>
+                          
+                    </div>     
+                </div>
+
+                <div class="p-col-2 p-d-flex p-ai-center">    
+                    <button pButton type="button" *ngIf="canDisplayNextValueButton"
+                        i18n-label="@@save_and_go_to_next_value" label="Enregistrer et passer à la valeur suivante" 
+                        class="p-as-center" icon="fas fa-angle-right" iconPos="right" 
+                        ></button>
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+</p-panel>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppUserService } from 'src/app/service/app-user.service';
-import { TranslationService } from 'src/app/service/translation.service';
+import { TranslationService } from 'src/app/module/translation/service/translation.service';
 import { ProcessingService } from 'src/app/service/processing.service';
 import { SelectItem } from 'primeng/api';
 import { APPUSER_TYPE } from 'src/app/enum/APPUSER_TYPE';

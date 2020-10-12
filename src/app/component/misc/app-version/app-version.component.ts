@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { FrontendVersionService } from 'src/app/service/frontend-version.service';
-import { TranslationService } from 'src/app/service/translation.service';
+import { TranslationService } from 'src/app/module/translation/service/translation.service';
 import { SayHelloService } from 'src/app/service/say-hello.service';
 
 @Component({

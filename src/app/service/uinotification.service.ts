@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {MessageService} from 'primeng/api';
-import { TranslationService } from './translation.service';
+import { TranslationService } from 'src/app/module/translation/service/translation.service';
 
 @Injectable({
   providedIn: 'root'

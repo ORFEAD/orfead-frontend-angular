@@ -1,0 +1,70 @@
+<app-main-menu></app-main-menu>
+<p-toast [hideTransitionOptions]="'5000ms'"></p-toast>
+
+<p-panel header="Qualification">
+    <div class="p-grid">
+        <div class="p-col-12">
+            <p-table [columns]="cols" [value]="data" dataKey="datasetName"
+                selectionMode="single" [(selection)]="selectedDataQualification" (onRowSelect)="onRowSelect($event)">
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th style="width: 4rem"></th>
+                        <th *ngFor="let col of columns">
+                            {{col.header | getTranslation}}
+                        </th>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr [pSelectableRow]="rowData">
+                        <td>
+                            <button type="button" pButton pRipple [pRowToggler]="rowData" class="p-button-text p-button-rounded p-button-plain" [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></button>
+                        </td>
+                        <td *ngFor="let col of columns">
+                            {{rowData[col.field]}}
+                        </td>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="rowexpansion" let-rowData>
+                    <tr>
+                        <td colspan="5">
+                            <div class="p-p-3">
+                                <p-table [value]="rowData.variables" dataKey="name">
+                                    <ng-template pTemplate="header">
+                                        <tr>
+                                            <th pSortableColumn="name">{{'variableName' | getTranslation}} <p-sortIcon field="name"></p-sortIcon></th>
+                                            <th pSortableColumn="valuesChecked">{{'valuesChecked' | getTranslation}} <p-sortIcon field="valuesChecked"></p-sortIcon></th>
+                                            <th style="width: 4rem"></th>
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template pTemplate="body" let-variable>
+                                        <tr>
+                                            <td>{{variable.name}}</td>
+                                            <td>{{variable.valuesChecked}}</td>                                            
+                                            <td><p-button type="button" icon="pi pi-search" (onClick)="handleClick($event,variable)"></p-button></td>
+                                        </tr>
+                                    </ng-template>
+                                    <ng-template pTemplate="emptymessage">
+                                        <tr>
+                                            <td colspan="6">There are no variable for this product yet.</td>
+                                        </tr>
+                                    </ng-template>
+                                </p-table>
+                            </div>
+                        </td>
+                    </tr>
+                </ng-template>
+
+            </p-table>
+            
+        </div>
+    </div>
+</p-panel>
+
+
+<div style="clear:both"></div>
+
+
+
+<app-app-version></app-app-version>

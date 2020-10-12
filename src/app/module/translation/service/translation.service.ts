@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
-import { AppUser } from '../model/AppUser';
 import * as moment from 'moment';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ErrorHandlerService } from './error-handler.service';
 import { Observable, Subject } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import xml2js from 'xml2js'; // NOTE: 'xml2js' is already a dependecy of angular but 
                              //        we needed to install packages 'stream' and 'timers'
 
 import { LOCALE_ID, Inject } from '@angular/core';
+import { Utils } from '../../../util/utils';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +28,9 @@ export class TranslationService {
 
 
   getSupportedLanguageCode() {
+
+    return "fr"; // force to French for development (TODO: do better than this)
+
     if (this.supportedLanguage != null) {
       return this.supportedLanguage;
     }
@@ -79,8 +81,11 @@ export class TranslationService {
     } else if (translationId.indexOf("@@") > -1) {
         translationId = translationId.replace("@@","");
     }
-    
-    
+
+    // Convert camel case (eg. creationTime -> creation_time)
+    //  by convention we expect only underscore case
+    translationId = Utils.camelCaseToUnderscore(translationId);
+
     // If there is a translation we use it
     if (Object.keys(this.translations).length > 0 && 
       this.translations[translationId] != null) {
@@ -114,7 +119,7 @@ export class TranslationService {
     // Get the current language
     var language = this.getSupportedLanguageCode();
     var url = "assets/translation/messages.xlf";
-    if (language != "en") {
+    if (language != "fr") {
       url = "assets/translation/messages."+ language + ".xlf";
     }
     console.log(url);

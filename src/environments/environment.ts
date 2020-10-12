@@ -7,7 +7,7 @@ export const environment = {
   prefillLoginForm: true,
   displayProcessesInfo: true,
   debugBlockUnblockUI:true,
-  apiURL: "http://localhost:8085/",
+  apiURL: "http://localhost:8091/",
   apiURLForFiles: "http://localhost:8086/",
   numberOfSecondsBetweenRefreshOfMessages: 120,
   numberOfSecondsBetweenChecksOfVersion: 120,

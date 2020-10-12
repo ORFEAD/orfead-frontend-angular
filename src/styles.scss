@@ -2,7 +2,7 @@
 @import '../node_modules/quill/dist/quill.snow'; 
 
 // Needed so that we can extend some classes (eg. '.text-center')
-@import 'bootstrap'; 
+// @import 'bootstrap'; 
 
 // https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp
 
@@ -39,6 +39,10 @@ body {
 
 .width-100pct {
     width:100%;
+}
+
+.source-value-container .ui-card {
+    height: 100%;
 }
 
 // https://css-tricks.com/centering-css-complete-guide/#center-vertically

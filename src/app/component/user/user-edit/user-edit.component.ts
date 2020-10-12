@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { AppUser } from 'src/app/model/AppUser';
 import { SelectItem } from 'primeng/api';
 import { RoleService } from 'src/app/service/role.service';
-import { TranslationService } from 'src/app/service/translation.service';
+import { TranslationService } from 'src/app/module/translation/service/translation.service';
 import { UINotificationService } from 'src/app/service/uinotification.service';
 import { AppUserRoleAsso } from 'src/app/model/AppUserRoleAsso';
 import { Role } from 'src/app/model/Role';

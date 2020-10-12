@@ -1,0 +1,50 @@
+{
+    "data":[
+        {
+            "datasetName": "Étude multicentrique 2018",
+            "variablesNb" : 12,
+            "rowsNb" : 9987,
+            "valuesChecked": 245,
+            "variables":[
+                {
+                    "id":"e3ej3i-e3e3i-deodkeo-223",
+                    "name": "itt",
+                    "valuesChecked":145
+                },
+                {
+                    "id":"e3ej3i-e3e3i-deodkeo-224",
+                    "name": "ecchymose",
+                    "valuesChecked":100
+                },
+                {
+                    "id":"e3ej3i-e3e3i-deodkeo-225",
+                    "name": "sexe",
+                    "valuesChecked":0
+                }
+            ]
+        },
+        {
+            "datasetName": "Étude multicentrique 2020",
+            "variablesNb" : 12,
+            "rowsNb" : 9987,
+            "valuesChecked": 245,
+            "variables":[
+                {
+                    "id":"e3ej3i-e3e3i-deodkeo-323",
+                    "name": "itt",
+                    "valuesChecked":145
+                },
+                {
+                    "id":"e3ej3i-e3e3i-deodkeo-324",
+                    "name": "ecchymose",
+                    "valuesChecked":100
+                },
+                {
+                    "id":"e3ej3i-e3e3i-deodkeo-325",
+                    "name": "sexe",
+                    "valuesChecked":0
+                }
+            ]
+        }
+    ]
+}
