@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { AppUser } from '../model/AppUser';
 import * as moment from 'moment';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -7,8 +6,7 @@ import { ErrorHandlerService } from './error-handler.service';
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { CURRENCY } from '../enum/CURRENCY';
-import { APPUSER_TYPE } from '../enum/APPUSER_TYPE';
-import { COMPANY_TYPE } from '../enum/COMPANY_TYPE';
+import { APPUSER_TYPE } from 'src/app/module/appuser/enum/APPUSER_TYPE';
 
 @Injectable({
   providedIn: 'root'
@@ -35,7 +33,7 @@ export class EnumService {
     );
   }
 
-  getAppUserTypes(): Observable<APPUSER_TYPE[]> {
+  getAppuserTypes(): Observable<APPUSER_TYPE[]> {
     const url = this.apiURL + "/posible-values/APPUSER_TYPE";
     // console.log(url);   
     return this.http.get<any[]>(url)    
@@ -43,21 +41,10 @@ export class EnumService {
         this.appUserTypesFromJSONArray(res)
         ))     
     .pipe(
-      catchError(this.errorHandlerService.handleError(`getAppUserTypes()`, null))
+      catchError(this.errorHandlerService.handleError(`getAppuserTypes()`, null))
     );
   }
 
-  getCompanyTypes(): Observable<COMPANY_TYPE[]> {
-    const url = this.apiURL + "/posible-values/COMPANY_TYPE";
-    // console.log(url);   
-    return this.http.get<any[]>(url)    
-    .pipe(map( res =>             
-        this.compamyTypesFromJSONArray(res)
-        ))     
-    .pipe(
-      catchError(this.errorHandlerService.handleError(`getCompanyTypes()`, null))
-    );
-  }
 
 
   currenciesFromJSONArray(array: Array<string>): CURRENCY[] {
@@ -66,9 +53,7 @@ export class EnumService {
   appUserTypesFromJSONArray(array: Array<string>): APPUSER_TYPE[] {
     return array.map(res => Number(APPUSER_TYPE[res]));
   } 
-  compamyTypesFromJSONArray(array: Array<string>): COMPANY_TYPE[] {
-    return array.map(res => Number(COMPANY_TYPE[res]));
-  } 
+
   
 
  

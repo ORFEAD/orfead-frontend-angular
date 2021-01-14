@@ -7,20 +7,39 @@ export class Utils {
     constructor() { }
   
     static convertPlainDataframe(df:any) {
-  
+
       // console.log(df);
-      var res = [];
-      var oneRow:any;
-      const nbCols = df.columns.length;
-      const nbRows = df.columns[0].length; // get the number of rows from the first column
-      const colNames = df.colindex.names;
   
-      for (var i = 0; i < nbRows; i++) {
-        oneRow = {}; // important to create a new object at every iteration
-        for (var j = 0; j < nbCols; j++) {
-          oneRow[colNames[j]] = df.columns[j][i];
-        }      
-        res.push(oneRow);
+      var res = [];
+
+      // Handle the two types of results that we can get from the julia middleware
+      if (df.columns != null) {
+        var oneRow:any;
+        const nbCols = df.columns.length;
+        const nbRows = df.columns[0].length; // get the number of rows from the first column
+        const colNames = df.colindex.names;
+    
+        for (var i = 0; i < nbRows; i++) {
+          oneRow = {}; // important to create a new object at every iteration
+          for (var j = 0; j < nbCols; j++) {
+            oneRow[colNames[j]] = df.columns[j][i];
+          }      
+          res.push(oneRow);
+        }
+      } else {
+
+        let colNames = Object.keys(df);
+        let nbCols = colNames.length;
+        let nbRows = df[colNames[0]].length;
+
+        for (var i = 0; i < nbRows; i++) {
+          oneRow = {}; // important to create a new object at every iteration
+          for (var j = 0; j < nbCols; j++) {
+            oneRow[colNames[j]] = df[colNames[j]][i];
+          }      
+          res.push(oneRow);
+        }
+
       }
   
       //console.log(res);    

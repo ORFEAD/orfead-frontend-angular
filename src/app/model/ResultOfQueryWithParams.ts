@@ -1,4 +1,3 @@
-import { Role } from "./Role";
 import { EntityBase } from './EntityBase';
 import { Utils } from '../util/utils';
 

@@ -11,7 +11,7 @@ export const environment = {
   apiURLForFiles: "http://localhost:8086/",
   numberOfSecondsBetweenRefreshOfMessages: 120,
   numberOfSecondsBetweenChecksOfVersion: 120,
-  frontEndVersion:"2020-07-27.01",
+  frontEndVersion:"2020-11-11.02",
   jwt_name: "orfead_jwt",
   defaultNumberOfResults:50,
   numberOfResultsForDeals: 50,

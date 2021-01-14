@@ -1,4 +1,4 @@
-<p-panel header="Qualification">
+<p-panel header="Qualification" [showHeader]="false">
     <div class="p-grid">
         <div class="p-col-12">
 
@@ -30,18 +30,99 @@
                         <td colspan="3">
                             <div class="p-p-3">
                                 <p-table [value]="rowData.variables" dataKey="name">
+
+                                    <ng-template pTemplate="colgroup">
+                                        <colgroup>
+                                            <col style="width:10em" > <!-- variable_name -->
+                                            <col style="width:5em" > <!-- nb_user_checks -->
+                                            <col style="width:5em" > <!-- nb_values_checked -->
+                                            <col style="width:5em" > <!-- nb_values_confirmed -->
+                                            <col style="width:5em" > <!-- nb_values_not_confirmed -->
+                                            <col style="width:15em" > <!-- confusion_matrix -->
+                                            <col style="width:5em" > <!-- sensitivity -->
+                                            <col style="width:5em" > <!-- specificity -->
+                                            <col style="width:5em" > <!-- precision -->
+                                            <col style="width:5em" > <!-- nb_final_checks_needed -->
+                                            <col class="action-column" > <!-- Action -->
+                                            <col class="action-column" *ngIf="canDisplayGiveFinalCheckButton"> <!-- Action -->
+                                        </colgroup>      
+                                    </ng-template>
+
                                     <ng-template pTemplate="header">
                                         <tr>
-                                            <th pSortableColumn="variable_name">{{'variable_name' | getTranslation}} <p-sortIcon field="name"></p-sortIcon></th>
-                                            <th pSortableColumn="valuesChecked">{{'values_checks_nb' | getTranslation}} <p-sortIcon field="valuesChecked"></p-sortIcon></th>
+                                            <th pSortableColumn="variable_name">{{'variable_name' | getTranslation}} <p-sortIcon field="variable_name"></p-sortIcon></th>
+                                            <th pSortableColumn="nb_user_checks">{{'nb_checks_done_by_you' | getTranslation}} <p-sortIcon field="nb_user_checks"></p-sortIcon></th>
+                                            <th pSortableColumn="nb_values_checked">{{'nb_values_checked' | getTranslation}} <p-sortIcon field="nb_values_checked"></p-sortIcon></th>
+                                            <th pSortableColumn="nb_values_confirmed">{{'among_which_nb_values_confirmed' | getTranslation}} <p-sortIcon field="nb_values_confirmed"></p-sortIcon></th>
+                                            <th pSortableColumn="nb_values_not_confirmed">{{'among_which_nb_values_not_confirmed' | getTranslation}} <p-sortIcon field="nb_values_not_confirmed"></p-sortIcon></th>
+                                            <th>
+                                                <span i18n-pTooltip="@@confusion_matrix_tooltip" 
+                                                  pTooltip="Les valeurs initiales (i.e. prédiction) sont en ligne ; les valeurs vérifiées (i.e. réalité) sont en colonne">{{'confusion_matrix' | getTranslation}} 🛈</span>
+                                            </th>
+                                            <th >
+                                                <span i18n-pTooltip="@@sensitivity_tooltip" 
+                                                  pTooltip=" Se = TP / P">
+                                                  {{'sensitivity' | getTranslation}} 🛈
+                                                </span>
+                                            </th>
+                                            <th >
+                                                <span i18n-pTooltip="@@specificity_tooltip" 
+                                                  pTooltip=" Sp = TN / N">{{'specificity' | getTranslation}} 🛈
+                                                </span>    
+                                            </th>
+                                            <th >
+                                                <span i18n-pTooltip="@@precision_tooltip" 
+                                                  pTooltip=" Prec = TP / P predicted">{{'precision' | getTranslation}} 🛈
+                                                </span>    
+                                            </th>
+                                            <th pSortableColumn="nb_final_checks_needed">{{'nb_final_checks_needed' | getTranslation}} <p-sortIcon field="nb_final_checks_needed"></p-sortIcon></th>
                                             <th style="width: 4rem"></th>
+                                            <th style="width: 4rem" *ngIf="canDisplayGiveFinalCheckButton"></th>
                                         </tr>
                                     </ng-template>
                                     <ng-template pTemplate="body" let-variable>
                                         <tr>
                                             <td>{{variable.variable_name}}</td>
-                                            <td>{{variable.values_checks_nb}}</td>                                            
-                                            <td><p-button type="button" icon="pi pi-search" (onClick)="handleClick($event,variable)"></p-button></td>
+                                            <td>{{variable.nb_user_checks}}</td>  
+                                            <td>{{variable.nb_values_checked}}</td>  
+                                            <td>{{variable.nb_values_confirmed}}</td>                                             
+                                            <td>{{variable.nb_values_not_confirmed}}</td>                                             
+                                            <td >
+                                                <div *ngIf="variable.confusion_matrix"
+                                                    [innerHTML]="variable.confusion_matrix_for_display | escapeHTML">
+                                                </div>
+                                            </td>                                             
+                                            <td>
+                                                <div *ngIf="variable.confusion_matrix != null 
+                                                         && variable.performances.Se != null">
+                                                    {{variable.performances.Se}} 
+                                                    ({{'without_missings' | getTranslation | lowercase}} : {{variable.performances.Se_WoMissing}})
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div *ngIf="variable.confusion_matrix != null 
+                                                         && variable.performances.Sp != null">
+                                                    {{variable.performances.Sp}} 
+                                                    ({{'without_missings' | getTranslation | lowercase}} : {{variable.performances.Sp_WoMissing}})
+                                                </div>                                                
+                                            </td>
+                                            <td>
+                                                <div *ngIf="variable.confusion_matrix != null 
+                                                        && variable.performances.Prec != null">
+                                                    {{variable.performances.Prec}} 
+                                                    ({{'without_missings' | getTranslation | lowercase}} : {{variable.performances.Prec_WoMissing}})
+                                                </div>                                                
+                                            </td>
+                                            <td>{{variable.nb_final_checks_needed}}</td>                                             
+                                            <td class="action-cell">
+                                                <p-button type="button" icon="pi pi-search" 
+                                                    (onClick)="handleClick($event,variable,'false')"
+                                                    i18n-pTooltip="check_values" pTooltip="Vérifier des valeurs"></p-button></td>
+                                            <td *ngIf="canDisplayGiveFinalCheckButton"
+                                                class="action-cell">
+                                                <p-button type="button" icon="fas fa-balance-scale" 
+                                                    (onClick)="handleClick($event,variable,'true')" 
+                                                    i18n-pTooltip="arbitrate_check_value_conflicts" pTooltip="Arbitrer des valeurs"></p-button></td>
                                         </tr>
                                     </ng-template>
                                     <ng-template pTemplate="emptymessage">

@@ -4,7 +4,7 @@ import { ChooseVariableToCheckComponent } from './component/data-check/choose-va
 import { CheckVariableComponent } from './component/data-check/check-variable/check-variable.component';
 import { FormsModule,Validators,FormControl,FormGroup,FormBuilder, ReactiveFormsModule } from '@angular/forms'; // <-- NgModel lives here
 
-import { SharedModule, MessageService, ConfirmationService, InputNumberModule } from 'primeng';
+import { SharedModule, MessageService, ConfirmationService } from 'primeng/api';
 import { PanelModule } from "primeng/panel";
 import { TableModule } from "primeng/table";
 import { ToastModule } from "primeng/toast";
@@ -45,10 +45,12 @@ import { BlockUIModule } from 'primeng/blockui';
 import { InplaceModule } from 'primeng/inplace';
 import { CardModule } from 'primeng/card';
 import {DynamicDialogModule, DynamicDialogRef, DynamicDialogConfig} from 'primeng/dynamicdialog';
-import { TranslationModule} from '../translation/translation.module'
+import { TranslationModule} from '../translation/translation.module';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { AuthGuardService } from 'src/app/service/auth-guard-service.service';
 import { AppModule } from 'src/app/app.module';
+import {InputNumberModule} from 'primeng/inputnumber';
+import { Spe3dlabUtilsModule } from '../spe3dlab-utils/spe3dlab-utils.module';
 
 @NgModule({
   declarations: [ChooseVariableToCheckComponent,CheckVariableComponent],
@@ -56,6 +58,7 @@ import { AppModule } from 'src/app/app.module';
     CommonModule,
     TranslationModule,
     FormsModule,
+    Spe3dlabUtilsModule,
 
     // PrimeNG
     InputTextModule,InputTextareaModule,PanelModule,MessagesModule,MessageModule,ButtonModule,
@@ -66,7 +69,7 @@ import { AppModule } from 'src/app/app.module';
     ConfirmDialogModule,PasswordModule,SidebarModule,AutoCompleteModule,
     FileUploadModule,TooltipModule,ChipsModule,AccordionModule,ToastModule, TableModule,
     ScrollPanelModule, LightboxModule,BlockUIModule, DynamicDialogModule,InplaceModule,
-    CardModule,InputNumberModule
+    CardModule, InputNumberModule
   ],
   exports: [ChooseVariableToCheckComponent,CheckVariableComponent],
   providers:[

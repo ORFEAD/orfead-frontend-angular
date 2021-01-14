@@ -1,0 +1,7 @@
+<p-fileUpload #form name="document" 
+                    customUpload="true" (uploadHandler)="customUploader($event, form)" 
+                    [multiple]="true" 
+                    [auto]="false" 
+                    i18n-chooseLabel="@@add_file" chooseLabel="Choisir les fichiers" 
+                    i18n-uploadLabel="@@uploader" uploadLabel="Uploader"
+                    i18n-cancelLabel="@@cancelLabel" cancelLabel="Annuler"></p-fileUpload>

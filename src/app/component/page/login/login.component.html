@@ -1,0 +1,54 @@
+<app-banner></app-banner>
+<app-processing></app-processing>
+<p-panel i18n-header="@@login_panel_hader" header="Login" >
+<form name="form"  #loginForm="ngForm" class="ui-g" (ngSubmit)="loginForm.form.valid && login()">
+    <div class="p-grid">
+
+        <div class="p-col-8 p-col-nopad">
+
+            <div class="p-grid">
+                <div class="p-col-12"> <!-- needed because putting the 'p-col-x' class messes up the display of the icon if we put it in the div that holds the 'p-inputgroup' class -->
+                    <div class="p-inputgroup">
+                           <span class="p-inputgroup-addon" ><i class="fa fa-user"></i></span>
+                           <input [(ngModel)]="model.username" #username="ngModel" name="username" 
+                                   type="text" pInputText placeholder="Identifiant" required>         
+                           <div *ngIf="username.invalid && (username.dirty || username.touched)" >
+                               <p-message *ngIf="username.errors.required" 
+                                   severity="error" 
+                                   i18n-text="@@field_is_required" text="Field is required"></p-message>                
+                           </div>
+                    </div>
+                </div>
+                <div class="p-col-12" > <!-- needed because putting the 'p-col-x' class messes up the display of the icon if we put it in the div that holds the 'p-inputgroup' class -->
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="fa fa-lock"></i></span>
+                        <input [(ngModel)]="model.password" #password="ngModel" name="password" type="password" pInputText placeholder="Mot de passe" required>         
+                        <div *ngIf="password.invalid && (password.dirty || password.touched)" >
+                               <p-message *ngIf="password.errors.required" 
+                                   severity="error"                            
+                                   i18n-text="@@field_is_required" text="Field is required"></p-message>                
+                           </div>
+                    </div>
+                </div>  
+            </div>
+            
+              
+        </div>
+                
+        <div class="p-col-4">
+            <button pButton type="button" label="Login" 
+                (click)="login()" style="width: 100%;height: 100%;"
+                [disabled]="loginForm.invalid"></button>   
+            <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+        </div>
+
+    </div>
+
+    
+    
+</form>
+
+ </p-panel>
+
+
+ <app-app-version></app-app-version>

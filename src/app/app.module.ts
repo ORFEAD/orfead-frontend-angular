@@ -11,28 +11,19 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFilePdf} from '@fortawesome/free-regular-svg-icons';
 import { DynamicDialogModule, DynamicDialogRef, DynamicDialogConfig } from 'primeng/dynamicdialog';
-import { LoginComponent } from './component/login/login.component';
+import { LoginComponent } from './component/page/login/login.component';
 import { AuthGuardService } from './service/auth-guard-service.service';
-import { AppVersionComponent } from './component/misc/app-version/app-version.component';
 import { ErrorHandlerService } from './service/error-handler.service';
-import { AuthenticationService } from './service/authentication.service';
+import { AuthenticationService } from 'src/app/module/appuser/service/authentication.service';
 import { MainMenuComponent } from './component/main-menu/main-menu.component';
 import { OtherTranslationsComponent } from './component/other-translations/other-translations.component';
 import { AuthInterceptor} from './AuthInterceptor';
-import { EscapeHtmlPipe } from './pipe/escape-html.pipe';
 
-import { FormatUTC2LocalTimePipe } from './pipe/format-utc2localtime.pipe';
 import { APP_INITIALIZER } from '@angular/core';
-import { UserEditComponent } from './component/user/user-edit/user-edit.component';
-import { UserDetailsComponent } from './component/user/user-details/user-details.component';
-import { EnumCode2EnumNamePipe } from './pipe/enum-code-2-enum-name.pipe';
 import { ProcessingComponent } from './component/processing/processing.component';
-import { UsersComponent } from './component/user/users/users.component';
-import { FormatUTC2LocalDatePipe } from './pipe/format-utc2localdate.pipe';
 import { PageNotAccessibleComponent } from './component/misc/page-not-accessible/page-not-accessible.component';
-import { RolesComponent } from './component/settings/roles/roles.component';
 import { BannerComponent } from './component/banner/banner.component';
-import { SharedModule, MessageService, ConfirmationService } from 'primeng';
+import { ConfirmationService, MessageService, SharedModule } from 'primeng/api';
 
 import { PanelModule } from "primeng/panel";
 import { TableModule } from "primeng/table";
@@ -78,9 +69,16 @@ import { DataQualificationHomeComponent } from './component/data-qualification/d
 //import { CheckVariableComponent } from './component/data-qualification/check-variable/check-variable.component';
 import { ValueCheckModule } from './module/value-check/value-check.module';
 import { TranslationModule } from './module/translation/translation.module';
+import { AppuserModule } from './module/appuser/appuser.module';
+import { Spe3dlabUtilsModule } from './module/spe3dlab-utils/spe3dlab-utils.module';
+import { FrontendVersionModule } from './module/frontend-version/frontend-version.module';
 import { ChoixVariableAVerifierComponent } from './component/page/choix-variable-a-verifier/choix-variable-a-verifier.component';
 import { VerificationVariableComponent } from './component/page/verification-variable/verification-variable.component'
 import { TranslationService } from './module/translation/service/translation.service';
+import { UtilisateursComponent } from './component/page/utilisateurs/utilisateurs.component';
+import { UtilisateurComponent } from './component/page/utilisateur/utilisateur.component';
+import { UnstructuredDatasetUploadComponent } from './component/unstructured-dataset-upload/unstructured-dataset-upload.component';
+import { FileUploaderComponent } from './component/file-uploader/file-uploader.component';
 
 // References: - https://devblog.dymel.pl/2017/10/17/angular-preload/
 //             - https://www.tektutorialshub.com/angular/angular-how-to-use-app-initializer/
@@ -99,23 +97,18 @@ export function initializeRolesFactory(authenticationService: AuthenticationServ
     AppComponent,
     DashboardComponent,
     LoginComponent,
-    AppVersionComponent,
     MainMenuComponent,
     OtherTranslationsComponent,
-    EscapeHtmlPipe,
-    EnumCode2EnumNamePipe,
-    FormatUTC2LocalTimePipe,
-    FormatUTC2LocalDatePipe,
-    UserEditComponent,
-    UserDetailsComponent,
     ProcessingComponent,
-    UsersComponent,
     PageNotAccessibleComponent,
-    RolesComponent,
     BannerComponent,
     DataQualificationHomeComponent,
     ChoixVariableAVerifierComponent,
     VerificationVariableComponent,
+    UtilisateursComponent,
+    UtilisateurComponent,
+    UnstructuredDatasetUploadComponent,
+    FileUploaderComponent,
   ],
   entryComponents: [
      // This is needed for displaying the component in a Dynamic Dialog
@@ -144,9 +137,11 @@ export function initializeRolesFactory(authenticationService: AuthenticationServ
     CardModule,
     
     // Spe3dlab modules (NEEDED?)
+    Spe3dlabUtilsModule,
     ValueCheckModule,
-    TranslationModule
-
+    TranslationModule,
+    FrontendVersionModule,
+    AppuserModule
   ],
   providers: [ErrorHandlerService,
               // AuthenticationService,
@@ -154,7 +149,6 @@ export function initializeRolesFactory(authenticationService: AuthenticationServ
               // LoginService,
               MessageService,
               TranslationService,
-              EnumCode2EnumNamePipe,
               ConfirmationService, // For PrimeNG confirmation dialog
               DynamicDialogRef, DynamicDialogConfig,
               { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},

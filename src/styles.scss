@@ -2,6 +2,9 @@
 @import '../node_modules/quill/dist/quill.snow'; 
 
 // Needed so that we can extend some classes (eg. '.text-center')
+@import 'bootstrap'; 
+
+// Needed so that we can extend some classes (eg. '.text-center')
 // @import 'bootstrap'; 
 
 // https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp
@@ -58,3 +61,37 @@ body {
 
 
 
+// Special columns
+.action-column {
+    width:3em;
+}
+
+.action-cell {
+    text-align: center!important;
+}
+
+.thumbnail-column {
+    width:10em;
+}
+
+// NOTE: We restrict to the first table because the cells of the
+//         table may contain some tables themselves
+.table_with_centered_content table, 
+.table_with_centered_content .p-table-wrapper > table,
+.table_with_centered_content .p-table-scrollable-header-box > table,
+.table_with_centered_content .p-table-scrollable-body > table 
+{ 
+    td, th, th input {
+        @extend .text-center;
+        table {
+            td,th {
+                text-align: initial !important;
+            }
+        }
+    }
+}
+
+.confusion-matrix td, .confusion-matrix th{
+    text-align: right;
+    padding: .0em 0.25em .0em 0.25em;
+}

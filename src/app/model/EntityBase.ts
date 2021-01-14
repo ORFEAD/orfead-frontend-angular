@@ -1,5 +1,5 @@
 import * as Moment from 'moment-timezone';
-import { AppUser } from './AppUser';
+import { Appuser } from 'src/app/module/appuser/model/Appuser';
 
 export class EntityBase {
     
@@ -8,8 +8,8 @@ export class EntityBase {
     id: string;    
     creationTime: Date;
     updateTime: Date;
-    creator:AppUser;
-    lastEditor:AppUser;
+    creator:Appuser;
+    lastEditor:Appuser;
     
     ref:string;
         
