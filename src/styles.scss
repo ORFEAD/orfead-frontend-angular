@@ -95,3 +95,72 @@ body {
     text-align: right;
     padding: .0em 0.25em .0em 0.25em;
 }
+
+.text-elt-in-anonymized-analysis {
+    margin-right: 0.5em;
+}
+
+.word-in-anonymized-analysis {
+    margin-right: 0.5em;
+}
+
+.anonymized-highlight {
+    background-color: yellow;
+}
+
+.check-doc-processing-panel {
+    margin-bottom: .5em;
+}
+
+.anonymization-container {
+    overflow-wrap: anywhere;
+}
+
+.p-fileupload-content {
+    min-height: 2em;
+}
+
+.p-fileupload-content::before {
+    content: "Glisser les fichiers ici ◎ ou Cliquer sur le bouton +";
+    color: $custom-lightgrey;
+}
+
+button + button {
+    margin-left: .5em!important ;
+}
+
+.processing-full-page-block-ui .p-blockui{
+    background-color: #94744f3f !important;
+    z-index: 1000;
+}
+
+// Ugly workaround, we need to specify both because some pages (home) 
+//  do not behave correctly without .processing-full-page-block-ui and on other
+//  pages (style-guide) the element looses the class `processing-full-page-block-ui`
+.processing-full-page-block-ui .p-blockui:after, .p-blockui:after {    
+    content: "\f110"; 
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    position: absolute;
+    font-size: 10vw;
+    color: grey;
+    top: 58%;
+    left: 56%;
+    margin: -300px 0 0 -200px;
+    z-index: 1002;
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+  }
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}

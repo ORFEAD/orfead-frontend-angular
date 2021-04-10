@@ -1,0 +1,11 @@
+<p-panel >
+    <app-spinner *ngIf="inProgress"></app-spinner>
+    <ng-template pTemplate="header" i18n="variables_extraction_result">
+        Résultat de l'extraction des variables
+    </ng-template>
+    <div *ngIf="analysis">
+        <app-check-doc-variable         
+            *ngFor="let _var of variables" [variable]="_var"></app-check-doc-variable>
+    </div>
+    
+</p-panel>

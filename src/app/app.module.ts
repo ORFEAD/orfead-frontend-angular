@@ -65,8 +65,6 @@ import { BlockUIModule } from 'primeng/blockui';
 import { InplaceModule } from 'primeng/inplace';
 import { CardModule } from 'primeng/card';
 import { DashboardComponent } from './component/dashboard-elts/dashboard/dashboard.component';
-import { DataQualificationHomeComponent } from './component/data-qualification/data-qualification-home/data-qualification-home.component';
-//import { CheckVariableComponent } from './component/data-qualification/check-variable/check-variable.component';
 import { ValueCheckModule } from './module/value-check/value-check.module';
 import { TranslationModule } from './module/translation/translation.module';
 import { AppuserModule } from './module/appuser/appuser.module';
@@ -77,8 +75,18 @@ import { VerificationVariableComponent } from './component/page/verification-var
 import { TranslationService } from './module/translation/service/translation.service';
 import { UtilisateursComponent } from './component/page/utilisateurs/utilisateurs.component';
 import { UtilisateurComponent } from './component/page/utilisateur/utilisateur.component';
-import { UnstructuredDatasetUploadComponent } from './component/unstructured-dataset-upload/unstructured-dataset-upload.component';
+import { UnstructuredDatasetUploadComponent } from './component/unstructured/unstructured-dataset-upload/unstructured-dataset-upload.component';
 import { FileUploaderComponent } from './component/file-uploader/file-uploader.component';
+import { DatasetSelectorComponent } from './component/dataset-selector/dataset-selector.component';
+import { CheckAnonymizedSentenceComponent } from './component/unstructured/check-anonymization/check-anonymized-sentence/check-anonymized-sentence.component';
+import { CheckAnonymizedDocComponent } from './component/unstructured/check-anonymization/check-anonymized-doc/check-anonymized-doc.component';
+import { CheckAnonymizedWordComponent } from './component/unstructured/check-anonymization/check-anonymized-word/check-anonymized-word.component';
+import { CheckDocVariablesComponent } from './component/unstructured/check-variables/check-doc-variables/check-doc-variables.component';
+import { CheckDocProcessingComponent } from './component/unstructured/check-doc-processing/check-doc-processing.component';
+import { CheckDocVariableComponent } from './component/unstructured/check-variables/check-doc-variable/check-doc-variable.component';
+import { SpinnerComponent } from './component/misc/spinner/spinner.component';
+import { ManualTaggingComponent } from './component/unstructured/manual-tagging/manual-tagging.component';
+import { CheckAnonymizedTextEltComponent } from './component/unstructured/check-anonymization/check-anonymized-text-elt/check-anonymized-text-elt.component';
 
 // References: - https://devblog.dymel.pl/2017/10/17/angular-preload/
 //             - https://www.tektutorialshub.com/angular/angular-how-to-use-app-initializer/
@@ -102,13 +110,22 @@ export function initializeRolesFactory(authenticationService: AuthenticationServ
     ProcessingComponent,
     PageNotAccessibleComponent,
     BannerComponent,
-    DataQualificationHomeComponent,
     ChoixVariableAVerifierComponent,
     VerificationVariableComponent,
     UtilisateursComponent,
     UtilisateurComponent,
     UnstructuredDatasetUploadComponent,
     FileUploaderComponent,
+    DatasetSelectorComponent,
+    CheckAnonymizedSentenceComponent,
+    CheckAnonymizedDocComponent,
+    CheckAnonymizedWordComponent,
+    CheckDocVariablesComponent,
+    CheckDocVariableComponent,
+    CheckDocProcessingComponent,
+    SpinnerComponent,
+    ManualTaggingComponent,
+    CheckAnonymizedTextEltComponent,    
   ],
   entryComponents: [
      // This is needed for displaying the component in a Dynamic Dialog

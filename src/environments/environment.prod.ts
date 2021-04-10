@@ -1,13 +1,17 @@
+
+
+
+
 export const environment = {
   production: true,
   prefillLoginForm: false,
   displayProcessesInfo: false,
   debugBlockUnblockUI:false,
   apiURL: "https://api-medleg.orfead.org/",
-  apiURLForFiles: "https://file-api-demo.merchmgt.com/",
+  apiURLForFiles: "https://api-medleg.orfead.org/",
   numberOfSecondsBetweenRefreshOfMessages: 120,
   numberOfSecondsBetweenChecksOfVersion: 120,
-  frontEndVersion:"2020-12-01.01",
+  frontEndVersion:"2021-02-09.01",
   jwt_name: "orfead_jwt",
   defaultNumberOfResults:50,
   numberOfResultsForDeals: 50,

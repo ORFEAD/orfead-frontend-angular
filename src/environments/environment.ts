@@ -8,7 +8,7 @@ export const environment = {
   displayProcessesInfo: true,
   debugBlockUnblockUI:true,
   apiURL: "http://localhost:8091/",
-  apiURLForFiles: "http://localhost:8086/",
+  apiURLForFiles: "http://localhost:8091/",
   numberOfSecondsBetweenRefreshOfMessages: 120,
   numberOfSecondsBetweenChecksOfVersion: 120,
   frontEndVersion:"2020-11-11.02",

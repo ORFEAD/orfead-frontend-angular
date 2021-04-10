@@ -13,13 +13,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     const idToken = localStorage.getItem(environment.jwt_name);
     // const idToken = "qqqqqqqqqqqqqqqqqqqq";
-    
-    // Do not add the usual authentication headers if it's a request to AWS
-    //  that would result in a non authorized error
-    if (req.url.indexOf("amazonaws") > 0){
-        return next.handle(req);
-    }
-
+ 
     if (idToken) {
         // console.log(req);
         const cloned = req.clone({

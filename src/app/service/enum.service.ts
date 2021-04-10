@@ -5,7 +5,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ErrorHandlerService } from './error-handler.service';
 import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { CURRENCY } from '../enum/CURRENCY';
 import { APPUSER_TYPE } from 'src/app/module/appuser/enum/APPUSER_TYPE';
 
 @Injectable({
@@ -21,17 +20,6 @@ export class EnumService {
   constructor(private http: HttpClient,
               private errorHandlerService: ErrorHandlerService) { }
 
-  getCurrencies(): Observable<CURRENCY[]> {
-    const url = this.apiURL + "/posible-values/CURRENCY";
-    // console.log(url);   
-    return this.http.get<any[]>(url)    
-    .pipe(map( res =>             
-        this.currenciesFromJSONArray(res)
-        ))     
-    .pipe(
-      catchError(this.errorHandlerService.handleError(`getCurrencies()`, null))
-    );
-  }
 
   getAppuserTypes(): Observable<APPUSER_TYPE[]> {
     const url = this.apiURL + "/posible-values/APPUSER_TYPE";
@@ -45,11 +33,6 @@ export class EnumService {
     );
   }
 
-
-
-  currenciesFromJSONArray(array: Array<string>): CURRENCY[] {
-    return array.map(res => Number(CURRENCY[res]));
-  } 
   appUserTypesFromJSONArray(array: Array<string>): APPUSER_TYPE[] {
     return array.map(res => Number(APPUSER_TYPE[res]));
   } 

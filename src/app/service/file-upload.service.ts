@@ -111,20 +111,65 @@ export class FileUploadService {
       );
   }
 
-  putFileOnAWS(file,uploadURL:string) {
-    const formData: FormData = new FormData();
-    formData.append('file', file, file.name);
-     //append any other key here if required
-     let headers = new HttpHeaders();
-    //  headers.append('Content-Type', 'image/jpeg');
+  processDocFile(file,datasetId:string):Observable<any> {
+
+    var url = `${this.apiURL}/process-doc-file/${datasetId}/${file.name}`;  
+
+    let headers = new HttpHeaders();
 
      return this.http
-              .put(uploadURL, file, {headers})
+              .post(url, file, {headers})
+              .pipe(map(res => {        
+                return res;
+              }))
+              .pipe(
+                catchError(this.errorHandlerService.handleError(`processDocFile()`, null))
+              );
+  }
+
+  analyzeDocFileForAnonymization(file,datasetId:string):Observable<any> {
+
+    var url = `${this.apiURL}/analyze-doc-file-for-anonymization/${datasetId}/${file.name}`;  
+
+    let headers = new HttpHeaders();
+
+     return this.http
+              .post(url, file, {headers})
+              .pipe(map(res => {        
+                return res;
+              }))
+              .pipe(
+                catchError(this.errorHandlerService.handleError(`analyzeDocFileForAnonymization()`, null))
+              );
+  }
+
+  analyzeDocFileForVariablesExtraction():Observable<any> {
+
+    var url = `${this.apiURL}/analyze-doc-file-for-variables-extraction`;  
+
+     return this.http
+              .post(url, {},)
+              .pipe(map(res => {        
+                return res;
+              }))
+              .pipe(
+                catchError(this.errorHandlerService.handleError(`analyzeDocFileForVariablesExtraction()`, null))
+              );
+  }
+
+  putFile(file,datasetId:string) {
+
+    var url = `${this.apiURL}/upload-unstructured/${datasetId}/${file.name}`;  
+
+    let headers = new HttpHeaders();
+
+     return this.http
+              .put(url, file, {headers})
               .pipe(map(res => {        
                 return true;
               }))
               .pipe(
-                catchError(this.errorHandlerService.handleError(`putFileOnAWS()`, null))
+                catchError(this.errorHandlerService.handleError(`putFile()`, null))
               );
   }
 

@@ -1,0 +1,10 @@
+<p-overlayPanel #op>
+    <ng-template pTemplate>
+        <p-selectButton [options]="anonymizationSelectItems" 
+            [(ngModel)]="operatorDecision" (ngModelChange)="handleOperatorDecision($event)"></p-selectButton>
+    </ng-template>
+</p-overlayPanel>
+
+<span *ngIf="hidden == false" class="word-in-anonymized-analysis" 
+    [class.anonymized-highlight]="anonymized === true" (click)="op.toggle($event)">{{wordData.content}}</span>
+

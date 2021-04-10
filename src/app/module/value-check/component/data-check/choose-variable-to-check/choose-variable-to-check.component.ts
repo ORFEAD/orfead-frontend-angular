@@ -46,12 +46,14 @@ export class ChooseVariableToCheckComponent implements OnInit {
   }
 
   getDatasetsWithVariablesWithCheckValueInfo() {
+    this.processingService.blockUI("getDatasetsWithVariablesWithCheckValueInfo"); 
     this.dataCheckService.getDatasetsWithVariablesWithCheckValueInfo().subscribe(res => {
       if (res.length > 0) {
 
         this.data = res;
         console.log(this.data);
       }
+      this.processingService.unblockUI("getDatasetsWithVariablesWithCheckValueInfo"); 
     });
   }
 

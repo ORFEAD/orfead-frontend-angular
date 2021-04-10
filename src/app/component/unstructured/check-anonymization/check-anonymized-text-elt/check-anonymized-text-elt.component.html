@@ -1,0 +1,13 @@
+<p-overlayPanel #op>
+    <ng-template pTemplate>
+        <p-selectButton [options]="anonymizationSelectItems" 
+            [(ngModel)]="operatorDecision" (ngModelChange)="handleOperatorDecision($event)"></p-selectButton>
+    </ng-template>
+</p-overlayPanel>
+
+<br *ngIf="textElt.firstEltOfLine"/>
+
+<span *ngIf="tableSeparator && hidden == false" class="text-elt-in-anonymized-analysis">|</span>
+
+<span *ngIf="tableSeparator == false && hidden == false" class="text-elt-in-anonymized-analysis" 
+    [class.anonymized-highlight]="anonymized === true" (click)="op.toggle($event)">{{textElt.value}}</span>

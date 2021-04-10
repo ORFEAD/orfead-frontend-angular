@@ -3,8 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuardService } from './service/auth-guard-service.service';
 import { LoginComponent } from './component/page/login/login.component';
 import { DashboardComponent } from './component/dashboard-elts/dashboard/dashboard.component';
-import { DataQualificationHomeComponent } from './component/data-qualification/data-qualification-home/data-qualification-home.component';
-// import { CheckVariableComponent } from './component/data-qualification/check-variable/check-variable.component';
 import { ChoixVariableAVerifierComponent } from './component/page/choix-variable-a-verifier/choix-variable-a-verifier.component';
 import { VerificationVariableComponent } from './component/page/verification-variable/verification-variable.component';
 import { UtilisateursComponent } from './component/page/utilisateurs/utilisateurs.component';
@@ -18,7 +16,6 @@ const routes: Routes = [
   // { path: 'check-variable/:dataset_id/:variable_id', component: CheckVariableComponent, canActivate: [AuthGuardService] }, 
   { path: 'check-variable/:dataset_id/:variable_id', component: VerificationVariableComponent, canActivate: [AuthGuardService] }, 
   // { path: 'settings/roles', component: RolesComponent, canActivate: [AuthGuardService] },
-  { path: 'data-qualification', component: DataQualificationHomeComponent, canActivate: [AuthGuardService] },
   { path: 'choix-variable-a-verifier', component: ChoixVariableAVerifierComponent, canActivate: [AuthGuardService] },
   { path: 'verification-variable/:dataset_id/:variable_id/:final-checks-only', component: VerificationVariableComponent, canActivate: [AuthGuardService] },
   { path: '', component: DashboardComponent, canActivate: [AuthGuardService] },

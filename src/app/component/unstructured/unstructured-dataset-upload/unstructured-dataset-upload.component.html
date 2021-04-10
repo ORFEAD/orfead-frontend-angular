@@ -1,0 +1,22 @@
+<p-panel [showHeader]="false">
+    <div class="p-grid">
+        <div class="p-col">
+            <h3 i18n="@@choose_dataset">Choisir le dataset</h3>
+            <app-dataset-selector datasetType="unstructured"></app-dataset-selector>
+        </div>
+        <div class="p-col">
+            <h3 i18n="@@choose_files">Choisir les fichiers à uploader</h3>
+            <app-file-uploader [dataset]="dataset"></app-file-uploader>
+        </div>
+    </div>  
+</p-panel>
+
+<p-panel [showHeader]="false">
+    <app-check-doc-processing *ngFor="let f of filesForProcessing" 
+        [file]="f" [dataset]="dataset" >
+    </app-check-doc-processing>
+</p-panel>
+
+<!-- <app-check-anonymized-doc 
+  *ngFor="let analysis of analysesOfDocFilesForAnonymization" 
+  [fileName]="analysis.fileName" [fileAnalysis]="analysis.fileAnalysis"></app-check-anonymized-doc> -->
