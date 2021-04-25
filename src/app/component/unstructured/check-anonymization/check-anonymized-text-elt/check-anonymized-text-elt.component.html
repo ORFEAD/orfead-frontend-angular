@@ -1,7 +1,17 @@
 <p-overlayPanel #op>
     <ng-template pTemplate>
-        <p-selectButton [options]="anonymizationSelectItems" 
-            [(ngModel)]="operatorDecision" (ngModelChange)="handleOperatorDecision($event)"></p-selectButton>
+        <div class="p-fluid">
+            <div class="p-field">
+                <p-selectButton [options]="anonymizationSelectItems" 
+                    [(ngModel)]="operatorDecision" (ngModelChange)="handleOperatorDecision($event)"></p-selectButton>
+            </div>
+            <div class="p-field-checkbox">
+                <p-checkbox inputId="applyManualFixToNextDocuments" [(ngModel)]="applyManualFixToNextDocuments" [binary]="true"></p-checkbox>
+                <label for="applyManualFixToNextDocuments">Appliquer cette correction aux prochains documents</label>
+            </div>
+        </div>
+        
+       
     </ng-template>
 </p-overlayPanel>
 
@@ -10,4 +20,7 @@
 <span *ngIf="tableSeparator && hidden == false" class="text-elt-in-anonymized-analysis">|</span>
 
 <span *ngIf="tableSeparator == false && hidden == false" class="text-elt-in-anonymized-analysis" 
-    [class.anonymized-highlight]="anonymized === true" (click)="op.toggle($event)">{{textElt.value}}</span>
+[ngClass]="{'identifying-value-type-name-highlight': textElt.identifyingValueType === 1, 
+            'identifying-value-type-date-highlight' : textElt.identifyingValueType === 2,
+            'identifying-value-type-zip_code-highlight' : textElt.identifyingValueType === 3 }" 
+            (click)="displayDialog($event)">{{textElt.value}}</span>

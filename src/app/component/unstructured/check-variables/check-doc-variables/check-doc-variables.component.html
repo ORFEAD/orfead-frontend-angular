@@ -1,5 +1,9 @@
 <p-panel >
     <app-spinner *ngIf="inProgress"></app-spinner>
+    <ng-template pTemplate="icons">
+        <button pButton i18n-label="@@refresh_variable_extraction" label="Raffraîchir les variables" 
+            icon="fas fa-sync-alt" (click)="handleClickOnRefreshButton($event)"></button>        
+    </ng-template>
     <ng-template pTemplate="header" i18n="variables_extraction_result">
         Résultat de l'extraction des variables
     </ng-template>

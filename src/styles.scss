@@ -29,6 +29,9 @@ body {
     background-color: $body-background-color;
 }
 
+label {
+    margin-bottom: 0;
+}
 
 .main-ip-icon + .ui-menuitem-text { 
     background: url(assets/img/home.png) no-repeat;  
@@ -104,8 +107,16 @@ body {
     margin-right: 0.5em;
 }
 
-.anonymized-highlight {
+.identifying-value-type-name-highlight {
     background-color: yellow;
+}
+
+.identifying-value-type-date-highlight {
+    background-color: rgb(158, 228, 255);
+}
+
+.identifying-value-type-zip_code-highlight {
+    background-color: rgb(255, 124, 248);
 }
 
 .check-doc-processing-panel {

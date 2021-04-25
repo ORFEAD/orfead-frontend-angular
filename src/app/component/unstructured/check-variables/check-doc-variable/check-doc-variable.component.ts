@@ -14,7 +14,7 @@ export class CheckDocVariableComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log(this.variable);
+    // console.log(this.variable);
   }
 
 }

@@ -40,4 +40,8 @@ export class CheckDocVariablesComponent implements OnInit {
 
   }
 
+  handleClickOnRefreshButton(evt) {
+    
+  }
+
 }

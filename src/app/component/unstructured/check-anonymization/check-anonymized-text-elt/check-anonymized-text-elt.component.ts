@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { SelectItem } from 'primeng/api';
+import {IDENTIFYING_VALUE_TYPE} from 'src/app/enum/IDENTIFYING_VALUE_TYPE'
 
 @Component({
   selector: 'app-check-anonymized-text-elt',
@@ -11,6 +12,11 @@ export class CheckAnonymizedTextEltComponent implements OnInit {
   @Input()
   textElt:any;
 
+  @ViewChild("op")
+  overlayPanel:any;
+
+  applyManualFixToNextDocuments:boolean = false;
+
   anonymizationSelectItems: SelectItem[];
 
   anonymized:boolean = false;
@@ -19,20 +25,23 @@ export class CheckAnonymizedTextEltComponent implements OnInit {
 
   operatorDecision:boolean = false;
 
-  display = false;
-
   constructor() { }
 
   ngOnInit(): void {
 
-    this.anonymizationSelectItems = [{label: 'Non anonymisé', value: false}, {label: 'Anonymisé', value: true}];
-
-    if (this.textElt.partOfName || this.textElt.partOfDate) {
-      this.anonymized = true;
+    this.anonymizationSelectItems = [{label: 'Partie de nom propre', value: IDENTIFYING_VALUE_TYPE.name}, 
+                                     {label: 'Partie de date', value: IDENTIFYING_VALUE_TYPE.date},
+                                     {label: 'Partie de code postal', value: IDENTIFYING_VALUE_TYPE.zip_code},
+                                     {label: 'Information non identifiante', value: null}];
+ 
+    // Convert the identifying information type
+    if (this.textElt.identifyingValueType != null) {
+      this.textElt.identifyingValueType  = Number(IDENTIFYING_VALUE_TYPE[this.textElt.identifyingValueType]);
+      console.log(this.textElt);
     }
 
     // Initialize the operatorDecision with what the server decision
-    this.operatorDecision = this.anonymized;
+    this.operatorDecision = this.textElt.identifyingValueType;
 
     if (this.textElt.value.includes("SPCLxFORMAT")) {
       this.hidden = true;
@@ -42,14 +51,14 @@ export class CheckAnonymizedTextEltComponent implements OnInit {
 
   }
 
-  displayDialog() {
-    this.display = true;
+  displayDialog(event) {
+    this.overlayPanel.show(event);
   }
 
   handleOperatorDecision(event) {
     console.log(event);
-    this.anonymized = event;
-    this.display = false;
+    this.textElt.identifyingValueType = event;
+    this.overlayPanel.hide();
   }
 
 }
