@@ -12,12 +12,18 @@ export class UnstructuredCompIntService {
     private docForProcessingSource = new Subject<any>();
     private docInProcessSource = new Subject<any>();
     private resultOfAnalyzeDocFileForAnonymizationSource = new Subject<any>();
+    private manualModificationToTextEltSource = new Subject<any>();
+    private resultOfVariablesExtractionSource = new Subject<any>();
+    private askTextEltsProcessingSource = new Subject<any>();
 
     // Observable string streams
     datasetSelected$ = this.datasetSelectedSource.asObservable();
     docForProcessing$ = this.docForProcessingSource.asObservable();
     docInProcess$ = this.docInProcessSource.asObservable();
     resultOfAnalyzeDocFileForAnonymization$ = this.resultOfAnalyzeDocFileForAnonymizationSource.asObservable();
+    manualModificationToTextElt$ = this.manualModificationToTextEltSource.asObservable();
+    resultOfVariablesExtraction$ = this.resultOfVariablesExtractionSource.asObservable();
+    askTextEltsProcessing$ = this.askTextEltsProcessingSource.asObservable();
   
     // Service message commands
     selectDataset(dataset: Dataset) {
@@ -34,6 +40,18 @@ export class UnstructuredCompIntService {
 
     announceDocForProcessing(f:any) {
       this.docForProcessingSource.next(f);
+    }
+
+    announceManualModificationToTextElt(textElt:any) {
+      this.manualModificationToTextEltSource.next(textElt);
+    }
+
+    announceResultOfVariablesExtraction(result:any) {
+      this.resultOfVariablesExtractionSource.next(result);
+    }
+
+    askTextEltsProcessing(o:any) {
+      this.askTextEltsProcessingSource.next();
     }
 
 }

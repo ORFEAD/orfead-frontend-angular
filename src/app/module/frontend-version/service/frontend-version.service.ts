@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as moment from 'moment';
 import { environment } from 'src/environments/environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ErrorHandlerService } from 'src/app/service/error-handler.service';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap, shareReplay } from 'rxjs/operators';
@@ -24,10 +24,9 @@ export class FrontendVersionService {
               private authenticationService:AuthenticationService) { }
 
 
-
   getCurrentFrontendVersion(): Observable<FrontendVersion> {
     const url = this.apiURL + "/get-current-frontend-version";
-    // console.log(url);   
+    
     return this.http.get<FrontendVersion>(url)    
     .pipe(map(res => new FrontendVersion(res)))     
     .pipe(

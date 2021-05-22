@@ -175,3 +175,18 @@ button + button {
         transform:rotate(360deg);
     }
 }
+
+.default-row-height {
+    height: $default-row-height;
+}
+
+.variable-value-scroll-panel {
+    @extend .default-row-height;
+    width: 100%;    
+}
+
+// Scroll bar
+.always-visible-scrollbar .p-scrollpanel-bar {    
+    opacity: 1;
+    background-color: grey;
+}

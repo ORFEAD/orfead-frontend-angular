@@ -25,6 +25,8 @@ export class ErrorHandlerService {
    public handleError<T> (operation = 'operation', result?: T) {
      return (error: any): Observable<T> => {
 
+      console.log(`typeof error${typeof error}`);
+
       this.handleErrorCore(error,operation)
 
        // TODO: better job of transforming error for user consumption
@@ -40,7 +42,7 @@ export class ErrorHandlerService {
    public handleErrorCore(error,operation) {
 
     this.processingService.clearProcessesList("ErrorHandlerService.handleErrorCore");
-    console.error(error);
+    // console.error(error);
 
     if (error.status === 401 && operation != "login") {
 //           this.authenticationService.logout();
@@ -49,17 +51,25 @@ export class ErrorHandlerService {
         console.warn("Server responded with a 401 (Unauthorized) on operation[], the user needs to be logged out");
     } else {
       var detail = error.statusText;
+      console.log(detail);
+      console.log(error);
+      
       if (error.error != null) {
-        if (error.error.val != null) {
-          detail += " " + error.error.val;
-        }
-        if (error.error.msg != null) {
-          detail += " " + error.error.msg;
-        } 
-        if (error.error.message != null) {
-          detail += " " + error.error.message;
-        }  
-      }
+        if (typeof error.error === "string") {
+          detail += " " + error.error;
+        } else {
+          if (error.error.val != null) {
+            detail += " " + error.error.val;
+          }
+          if (error.error.msg != null) {
+            detail += " " + error.error.msg;
+          } 
+          if (error.error.message != null) {
+            detail += " " + error.error.message;
+          } 
+        }       
+         
+    }
      this.messageService.add({severity:'error', 
                               summary: 'Error', 
                               detail:detail});

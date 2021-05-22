@@ -57,7 +57,15 @@ export class Utils {
     static getDefaultPictureURLAsObservable():Observable<any> {
       return of("assets/img/dummy.png");
     }
+
+    static getNameOfDatasetPasswordAttributeInLocalStorage(datasetId:string) {
+      return `orfead-password-for-dataset-${datasetId}`;
+    }
     
+    static getNameOfDatasetPasswordHeaderForHttpRequest(datasetId:string) {
+      return `x-password-for-dataset-${datasetId}`;
+    }
+
     // Eg. Thu Aug 08 2019 00:00:00 GMT+0800 (Singapore Standard Time) -> Thu Aug 08 2019 08:00:00 GMT+0800 (Singapore Standard Time)
     static forceDateToUTC(date:Date){ 
         if (date == null) {

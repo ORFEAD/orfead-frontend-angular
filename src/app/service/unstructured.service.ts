@@ -29,28 +29,26 @@ export class UnstructuredService {
               private messageService:MessageService,
               private authenticationService:AuthenticationService) { }
 
-  
-
-
-
   processDocFile(file,datasetId:string):Observable<any> {
 
     var url = `${this.apiURL}/process-doc-file/${datasetId}/${file.name}`;  
 
-    const dataset_password = localStorage.getItem(environment.dataset_password_name);
+    const dataset_password = localStorage.getItem(
+      Utils.getNameOfDatasetPasswordAttributeInLocalStorage(datasetId)
+    );
 
     if (!dataset_password) {
       this.messageService.add({severity:'warn', 
                                 summary: 'Error', 
-                                detail:`Missing ${environment.dataset_password_name} in local storage`});
+                                detail:`Missing ${Utils.getNameOfDatasetPasswordAttributeInLocalStorage(datasetId)} in local storage`});
 
       return of(null);
     }
-    
-
+   
     let headers = new HttpHeaders();
-    headers = headers.append("x-dataset-password",dataset_password);
-
+    headers = headers.append(Utils.getNameOfDatasetPasswordHeaderForHttpRequest(datasetId),
+                             dataset_password);
+   
     return this.http
               .post(url, file, {headers})
               .pipe(map(res => {        
@@ -66,19 +64,22 @@ export class UnstructuredService {
 
     var url = `${this.apiURL}/process-text-elts/${datasetId}`;  
 
-    const dataset_password = localStorage.getItem(environment.dataset_password_name);
+    const dataset_password = localStorage.getItem(
+      Utils.getNameOfDatasetPasswordAttributeInLocalStorage(datasetId)
+    );
 
     if (!dataset_password) {
       this.messageService.add({severity:'warn', 
                                 summary: 'Error', 
-                                detail:`Missing ${environment.dataset_password_name} in local storage`});
+                                detail:`Missing ${Utils.getNameOfDatasetPasswordAttributeInLocalStorage(datasetId)} in local storage`});
 
       return of(null);
     }
     
 
     let headers = new HttpHeaders();
-    headers = headers.append("x-dataset-password",dataset_password);
+    headers = headers.append(Utils.getNameOfDatasetPasswordHeaderForHttpRequest(datasetId),
+                             dataset_password);
 
     return this.http
               .post(url, 

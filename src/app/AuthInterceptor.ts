@@ -15,14 +15,14 @@ export class AuthInterceptor implements HttpInterceptor {
     // const idToken = "qqqqqqqqqqqqqqqqqqqq";
  
     if (idToken) {
-        // console.log(req);
-        const cloned = req.clone({
+        // console.log(req.headers);
+        let cloned = req.clone({
             // The header key must be lower case (authorization not Authorization) 
             //   because haproxy makes everything lower case
-            headers: req.headers.set("authorization",
+            headers: req.headers.append("authorization",
                 "Bearer " + idToken)
         });
-        // console.log(cloned);
+        console.log(cloned);
         return next.handle(cloned);
     }
     else {

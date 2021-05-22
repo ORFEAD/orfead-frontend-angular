@@ -14,6 +14,7 @@ import { DynamicDialogModule, DynamicDialogRef, DynamicDialogConfig } from 'prim
 import { LoginComponent } from './component/page/login/login.component';
 import { AuthGuardService } from './service/auth-guard-service.service';
 import { ErrorHandlerService } from './service/error-handler.service';
+import { UnstructuredService } from './service/unstructured.service';
 import { AuthenticationService } from 'src/app/module/appuser/service/authentication.service';
 import { MainMenuComponent } from './component/main-menu/main-menu.component';
 import { OtherTranslationsComponent } from './component/other-translations/other-translations.component';
@@ -78,15 +79,14 @@ import { UtilisateurComponent } from './component/page/utilisateur/utilisateur.c
 import { UnstructuredDatasetUploadComponent } from './component/unstructured/unstructured-dataset-upload/unstructured-dataset-upload.component';
 import { FileUploaderComponent } from './component/file-uploader/file-uploader.component';
 import { DatasetSelectorComponent } from './component/dataset-selector/dataset-selector.component';
-import { CheckAnonymizedSentenceComponent } from './component/unstructured/check-anonymization/check-anonymized-sentence/check-anonymized-sentence.component';
 import { CheckAnonymizedDocComponent } from './component/unstructured/check-anonymization/check-anonymized-doc/check-anonymized-doc.component';
-import { CheckAnonymizedWordComponent } from './component/unstructured/check-anonymization/check-anonymized-word/check-anonymized-word.component';
 import { CheckDocVariablesComponent } from './component/unstructured/check-variables/check-doc-variables/check-doc-variables.component';
 import { CheckDocProcessingComponent } from './component/unstructured/check-doc-processing/check-doc-processing.component';
 import { CheckDocVariableComponent } from './component/unstructured/check-variables/check-doc-variable/check-doc-variable.component';
 import { SpinnerComponent } from './component/misc/spinner/spinner.component';
 import { ManualTaggingComponent } from './component/unstructured/manual-tagging/manual-tagging.component';
 import { CheckAnonymizedTextEltComponent } from './component/unstructured/check-anonymization/check-anonymized-text-elt/check-anonymized-text-elt.component';
+import { VariableValueEditComponent } from './component/variable/variable-value-edit/variable-value-edit.component';
 
 // References: - https://devblog.dymel.pl/2017/10/17/angular-preload/
 //             - https://www.tektutorialshub.com/angular/angular-how-to-use-app-initializer/
@@ -117,15 +117,14 @@ export function initializeRolesFactory(authenticationService: AuthenticationServ
     UnstructuredDatasetUploadComponent,
     FileUploaderComponent,
     DatasetSelectorComponent,
-    CheckAnonymizedSentenceComponent,
     CheckAnonymizedDocComponent,
-    CheckAnonymizedWordComponent,
     CheckDocVariablesComponent,
     CheckDocVariableComponent,
     CheckDocProcessingComponent,
     SpinnerComponent,
     ManualTaggingComponent,
-    CheckAnonymizedTextEltComponent,    
+    CheckAnonymizedTextEltComponent,
+    VariableValueEditComponent,    
   ],
   entryComponents: [
      // This is needed for displaying the component in a Dynamic Dialog

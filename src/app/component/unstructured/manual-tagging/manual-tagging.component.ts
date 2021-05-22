@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { VariableValue } from 'src/app/model/VariableValue';
 
 @Component({
   selector: 'app-manual-tagging',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manual-tagging.component.scss']
 })
 export class ManualTaggingComponent implements OnInit {
+
+  @Input()
+  variableValues:VariableValue[];
 
   constructor() { }
 

@@ -8,6 +8,7 @@ export class Variable extends EntityBase {
     dataset:Dataset;
     name:string;
     valueType:VALUE_TYPE;
+    possibleValuesAsStrArr:string[];
 
     constructor(_json:Object) {
         super(_json);
@@ -18,6 +19,7 @@ export class Variable extends EntityBase {
         if (_json['valueType'] != null) {
             this.valueType = Number(VALUE_TYPE[_json['valueType']]) ;        
         }
+        this.possibleValuesAsStrArr = _json['possibleValuesAsStrArr'];
         
         // This is here and not in the EntityBase to avoid circular dependencies
         if (_json['creator'] != null) {                

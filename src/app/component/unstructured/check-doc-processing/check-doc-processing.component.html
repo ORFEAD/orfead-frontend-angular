@@ -2,7 +2,7 @@
   [style.display]="!saved ? 'block' : 'none'" >
 
     <ng-template pTemplate="icons">
-        <button pButton i18n-label="@@save" label="Enregistrer" 
+        <button pButton [disabled]="!readyForSerialization" i18n-label="@@save" label="Enregistrer" 
             icon="fas fa-save" (click)="handleClickOnSaveButton($event)"></button>        
     </ng-template>
 
@@ -11,14 +11,14 @@
     </ng-template>
     <div class="p-grid">
         <div class="p-col-12">
-            <app-manual-tagging></app-manual-tagging>
+            <app-manual-tagging [variableValues]="variableValuesManuallyFilled"></app-manual-tagging>
         </div>
-        <div class="p-col-6">
+        <div class="p-col-4">
             <app-check-anonymized-doc 
                 [analysis]="resultOfAnonymizationAnalysis" 
                 [inProgress]="anonymizationInProgress"></app-check-anonymized-doc>
         </div>
-        <div class="p-col-6">
+        <div class="p-col-8">
             <app-check-doc-variables 
                 [analysis]="resultOfVariablesExtractionAnalysis" 
                 [inProgress]="variablesExtractionInProgress"></app-check-doc-variables>

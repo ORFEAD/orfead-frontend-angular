@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { Dataset } from 'src/app/model/Dataset';
 import { UnstructuredCompIntService } from 'src/app/service/comp-int/unstructured-comp-int.service';
 import { ProcessingService } from 'src/app/service/processing.service';
+import { UnstructuredService } from 'src/app/service/unstructured.service';
 
 @Component({
   selector: 'app-check-anonymized-doc',
@@ -13,16 +15,18 @@ export class CheckAnonymizedDocComponent implements OnInit {
   @Input() 
   analysis:any;
 
-  // fileName:string;
-
-  // fileAnalysis:any;
+  @Input()
+  dataset:Dataset;
 
   @Input()
   inProgress:boolean;
+
+  manuallyTaggedElts:any[] = [];
   
   constructor(private processingService:ProcessingService,
-              private componentsInteractionService:UnstructuredCompIntService) { 
-        
+              private unstructuredCompIntService:UnstructuredCompIntService,
+              private unstructuredService:UnstructuredService) { 
+             
   }
   
   ngOnInit(): void {

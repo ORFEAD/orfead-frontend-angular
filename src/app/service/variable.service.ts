@@ -7,32 +7,31 @@ import { Observable } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Utils } from 'src/app/util/utils';
 import { Dataset } from 'src/app/model/Dataset';
+import { Variable } from 'src/app/model/Variable';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DatasetService {
+export class VariableService {
 
-  private apiURL = environment.apiURL + 'dataset';  // URL to web api
+  private apiURL = environment.apiURL + 'variable';  // URL to web api
 
   constructor(private http: HttpClient,
               private errorHandlerService: ErrorHandlerService) { }
 
-  getDatasetsAccessibleToUser(datasetType:string): Observable<Dataset[]> {
-    var url = this.apiURL + "/all-datasets";     
+  getVariablesFilledInByUser(datasetId:string): Observable<Variable[]> {
+    var url = `${this.apiURL}/${datasetId}/filled-in-ui`;     
     
-    return this.http.post<Dataset[]>(url,
-                                     JSON.stringify({datasetType:datasetType}))    
+    return this.http.get<Variable[]>(url)    
     .pipe(map( res =>             
         this.fromJSONArray(res)
         ))  
     .pipe(
-      catchError(this.errorHandlerService.handleError(`getDatasetsAccessibleToUser()`, null))
+      catchError(this.errorHandlerService.handleError(`getVariablesFilledInByUser()`, null))
     );
   }
 
-  fromJSONArray(array: Array<Object>): Dataset[] {
-    return array.map(res => new Dataset(res));
+  fromJSONArray(array: Array<Object>): Variable[] {
+    return array.map(res => new Variable(res));
   } 
-
 }

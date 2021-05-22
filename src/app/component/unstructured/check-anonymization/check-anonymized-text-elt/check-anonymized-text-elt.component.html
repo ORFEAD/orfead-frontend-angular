@@ -2,12 +2,12 @@
     <ng-template pTemplate>
         <div class="p-fluid">
             <div class="p-field">
-                <p-selectButton [options]="anonymizationSelectItems" 
+                <p-selectButton [options]="partOfSpeechSelectItems" 
                     [(ngModel)]="operatorDecision" (ngModelChange)="handleOperatorDecision($event)"></p-selectButton>
             </div>
             <div class="p-field-checkbox">
-                <p-checkbox inputId="applyManualFixToNextDocuments" [(ngModel)]="applyManualFixToNextDocuments" [binary]="true"></p-checkbox>
-                <label for="applyManualFixToNextDocuments">Appliquer cette correction aux prochains documents</label>
+                <p-checkbox inputId="applyManualTagToNextDocuments" [(ngModel)]="applyManualTagToNextDocuments" [binary]="true"></p-checkbox>
+                <label for="applyManualTagToNextDocuments">Appliquer cette correction aux prochains documents</label>
             </div>
         </div>
         
@@ -20,7 +20,7 @@
 <span *ngIf="tableSeparator && hidden == false" class="text-elt-in-anonymized-analysis">|</span>
 
 <span *ngIf="tableSeparator == false && hidden == false" class="text-elt-in-anonymized-analysis" 
-[ngClass]="{'identifying-value-type-name-highlight': textElt.identifyingValueType === 1, 
+[ngClass]="{'identifying-value-type-name-highlight': textElt.identifyingValueType === 1 || textElt.tag === 'PROPN' , 
             'identifying-value-type-date-highlight' : textElt.identifyingValueType === 2,
             'identifying-value-type-zip_code-highlight' : textElt.identifyingValueType === 3 }" 
             (click)="displayDialog($event)">{{textElt.value}}</span>
