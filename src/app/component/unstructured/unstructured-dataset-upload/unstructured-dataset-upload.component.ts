@@ -3,6 +3,10 @@ import { ProcessingService } from 'src/app/service/processing.service';
 import { Subscription } from 'rxjs';
 import { UnstructuredCompIntService } from 'src/app/service/comp-int/unstructured-comp-int.service';
 import { Dataset } from 'src/app/model/Dataset';
+import * as mnemonicWords from 'mnemonic-words';
+// import * as bitcoreMnemonic from 'bitcore-mnemonic';
+import * as bip39 from 'bip39';
+
 
 @Component({
   selector: 'app-unstructured-dataset-upload',
@@ -39,7 +43,12 @@ export class UnstructuredDatasetUploadComponent implements OnInit {
   }  
 
   ngOnInit(): void {
-    
+    // const mnemonic = bip39.generateMnemonic();
+    // var code = new bitcoreMnemonic(bitcoreMnemonic.Words.SPANISH);
+    // console.log(code.toString());
+    // console.log(mnemonicWords);
+    // const mnemonic = bip39.generateMnemonic();
+    // console.log(`mnemonic[${mnemonic}]`);
   }
 
   

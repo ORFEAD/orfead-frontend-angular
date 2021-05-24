@@ -3,14 +3,11 @@
     <ng-template pTemplate="header" i18n="manual_tagging">
         Tag manuel du document
     </ng-template>
-    
-
         <div class="p-fluid">
-            <ng-container *ngFor="let variableValue of variableValues" >
-                <div app-variable-value-edit class="p-field p-grid"
-                [variableValue]="variableValue"></div>
-            </ng-container>
-            
+
+            <app-variable-value-edit *ngFor="let variableValue of variablesValues" 
+                [variableValue]="variableValue"></app-variable-value-edit>
+                
         </div>
     
     

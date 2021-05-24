@@ -36,7 +36,7 @@ export class CheckDocProcessingComponent implements OnInit {
   resultOfAnonymizationAnalysis:any;
   resultOfVariablesExtractionAnalysis:any;
 
-  variableValuesManuallyFilled:VariableValue[];
+  variablesValuesManuallyFilled:VariableValue[];
   
   constructor(private processingService:ProcessingService,
               private unstructuredService:UnstructuredService,
@@ -48,13 +48,16 @@ export class CheckDocProcessingComponent implements OnInit {
     });
 
     unstructuredCompIntService.resultOfVariablesExtraction$.subscribe(res => {
-      this.readyForSerialization = true;
+      this.checkIfReadyForSerialization();
     });
 
     unstructuredCompIntService.askTextEltsProcessing$.subscribe( res => {
       this.processTextElts(true);
-    } 
-    );   
+    });  
+    
+    unstructuredCompIntService.changeOnVariableValueManuallyFilled$.subscribe(res => {
+      this.checkIfReadyForSerialization();
+    }); 
 
   }
 
@@ -63,7 +66,36 @@ export class CheckDocProcessingComponent implements OnInit {
     // this.processingService.blockUI("FilesBlocComponent.customUploader");
     this.anonymizationInProgress = true;
     this.initializeVariableValuesForVariablesFilledInByUser();
-    // this.processDocFile();
+    this.processDocFile();
+  }
+
+  checkIfReadyForSerialization() {
+    if (this.areRequiredExtractedVariablesValuesNotNull() 
+      && this.areRequiredVariableValueManuallyFilledReady()) {
+      this.readyForSerialization = true;
+    } else {
+      this.readyForSerialization = false;
+    }
+  }
+
+  areRequiredVariableValueManuallyFilledReady():boolean {
+    for (let vv of this.variablesValuesManuallyFilled) {
+      console.log(vv);
+      if (vv.variable.required === true && (vv.valueAsStr == null || vv.valueAsStr.length == 0)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  areRequiredExtractedVariablesValuesNotNull():boolean{
+    console.log(this.resultOfVariablesExtractionAnalysis);
+    for (let vDef of this.getAllVarDefsFromTpl()) {
+      if (vDef.required === true && vDef.value == null) {
+        return false;
+      }
+    }
+    return true;
   }
 
   handleClickOnSaveButton(evt) {
@@ -75,11 +107,11 @@ export class CheckDocProcessingComponent implements OnInit {
     this.variableService.getVariablesFilledInByUser(this.dataset.id).subscribe(res => {
       if (res != null) {
         console.log(res);
-        this.variableValuesManuallyFilled = [];
+        this.variablesValuesManuallyFilled = [];
         for (let v of res) {
           let variableValue = new VariableValue({});
           variableValue.variable = v;
-          this.variableValuesManuallyFilled.push(variableValue);
+          this.variablesValuesManuallyFilled.push(variableValue);
         }
       }
     }
@@ -138,6 +170,7 @@ export class CheckDocProcessingComponent implements OnInit {
   serializeVariablesValues() {
     this.unstructuredService.serializeVariablesValues(this.resultOfVariablesExtractionAnalysis,
                                                       this.resultOfAnonymizationAnalysis,
+                                                      this.variablesValuesManuallyFilled,
                                                       this.dataset.id).subscribe(res => {
         if (res != null) {
           this.saved = true;
@@ -146,6 +179,16 @@ export class CheckDocProcessingComponent implements OnInit {
 
   }
 
-  
+  getAllVarDefsFromTpl() {
+    let _vars = [];
+    let _tpl = this.resultOfVariablesExtractionAnalysis;
+    for (let b of _tpl["blocks"]) {
+      _vars = _vars.concat(b["variables"]);
+    }
+    _vars = _vars.concat(_tpl.preProcessing.variables);
+    _vars = _vars.concat(_tpl.postProcessing.variables);      
+    return _vars;
+  }
+     
 
 }

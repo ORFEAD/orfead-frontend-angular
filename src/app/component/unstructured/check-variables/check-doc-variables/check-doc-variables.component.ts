@@ -53,6 +53,19 @@ export class CheckDocVariablesComponent implements OnInit {
         sorting:null // null, 1, -1
       },
       {
+        field:"valueType",
+        header:this.translationService.getTranslation("valueType"),
+        // attributeType:"text",
+        // exactMatch:false,
+        columnIsAvailable:true,
+        columnIsDisplayed:true,
+        filterIsActive:false,
+        minimumCharactersNeeded:2,
+        width:"5em",
+        filterValue:null,
+        sorting:null // null, 1, -1
+      },
+      {
         field:"anonymizationType",
         header:this.translationService.getTranslation("anonymizationType"),
         // attributeType:"text",
@@ -64,7 +77,7 @@ export class CheckDocVariablesComponent implements OnInit {
         width:"10em",
         filterValue:null,
         sorting:null // null, 1, -1
-      },
+      },      
       {
         field:"value",
         header:this.translationService.getTranslation("value"),
@@ -105,19 +118,6 @@ export class CheckDocVariablesComponent implements OnInit {
         sorting:null // null, 1, -1
       },
       {
-        field:"valueType",
-        header:this.translationService.getTranslation("valueType"),
-        // attributeType:"text",
-        // exactMatch:false,
-        columnIsAvailable:true,
-        columnIsDisplayed:true,
-        filterIsActive:false,
-        minimumCharactersNeeded:2,
-        width:"5em",
-        filterValue:null,
-        sorting:null // null, 1, -1
-      },
-      {
         field:"required",
         header:this.translationService.getTranslation("required"),
         // attributeType:"text",
@@ -132,7 +132,7 @@ export class CheckDocVariablesComponent implements OnInit {
       },
       {
         field:"serialize",
-        header:this.translationService.getTranslation("serialize"),
+        header:this.translationService.getTranslation("serialized_to_database"),
         // attributeType:"text",
         // exactMatch:false,
         columnIsAvailable:true,

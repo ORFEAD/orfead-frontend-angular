@@ -18,7 +18,7 @@
                 <tr>
                     <ng-container *ngFor="let col of columns" >
                         <th [pSortableColumn]="col.field">
-                            {{col.header}} 
+                            <span >{{col.header}}</span>
                             <p-sortIcon field="col.field"></p-sortIcon>
                         </th>
                     </ng-container>                    
@@ -34,7 +34,6 @@
                         </th>
                     </ng-container>                    
                 </tr>
-
 
             </ng-template>
 
@@ -53,13 +52,31 @@
             <ng-template pTemplate="body" let-rowData let-columns="columns">
                 <tr>
                     <ng-container  *ngFor="let col of columns" >
-                        <td [ngSwitch]="rowData['valueType']">                        
-                            <span *ngSwitchDefault>{{rowData[col.field]}}</span> 
-                            <p-scrollPanel *ngSwitchCase="'text'" 
-                                styleClass="variable-value-scroll-panel always-visible-scrollbar" >
-                                {{rowData[col.field]}}
-                            </p-scrollPanel>  
-                        </td>                        
+
+                        <ng-container *ngIf="col.field == 'name' 
+                                            || col.field == 'anonymizationType'
+                                            || col.field == 'pseudoValue';
+                                            else colsThatMayNeedOverflow">
+                            <td >                                                    
+                                <span class="d-inline-block text-truncate overflow-hidden" style="max-width: 100%;" 
+                                      data-toggle="tooltip" [title]="rowData[col.field]">
+                                    {{rowData[col.field]}}
+                                </span> 
+                            </td>           
+                        </ng-container>
+                        <ng-template #colsThatMayNeedOverflow>
+                            <ng-container>
+                                <td [ngSwitch]="rowData['valueType']">                                                    
+                                    <span *ngSwitchDefault >{{rowData[col.field]}}</span>
+                                    <p-scrollPanel *ngSwitchCase="'text'" 
+                                        styleClass="variable-value-scroll-panel always-visible-scrollbar" >
+                                        {{rowData[col.field]}}
+                                    </p-scrollPanel>  
+                                </td>                        
+                            </ng-container>
+                        </ng-template>
+                       
+                        
                     </ng-container>
                 </tr>
             </ng-template>

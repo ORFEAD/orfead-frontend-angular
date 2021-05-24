@@ -9,10 +9,12 @@ export class Variable extends EntityBase {
     name:string;
     valueType:VALUE_TYPE;
     possibleValuesAsStrArr:string[];
+    required:boolean;
 
     constructor(_json:Object) {
         super(_json);
         this.name = _json['name'];
+        this.required = _json['required'];
         if (_json['dataset'] != null) {
             this.dataset = new Dataset(_json['dataset']);
         }        

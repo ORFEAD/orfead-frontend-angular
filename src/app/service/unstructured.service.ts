@@ -13,6 +13,7 @@ import { Utils } from '../util/utils';
 import { throwError } from 'rxjs/internal/observable/throwError';
 import {MessageService} from 'primeng/api';
 import { Dataset } from '../model/Dataset';
+import { VariableValue } from '../model/VariableValue';
 
 @Injectable({
   providedIn: 'root'
@@ -97,6 +98,7 @@ export class UnstructuredService {
 
   serializeVariablesValues(tpl:any[],
                            textElts:any[], 
+                           variablesValuesManuallyFilled:VariableValue[],
                            datasetId:string):Observable<any> {
 
     var url = `${this.apiURL}/serialize-variables-values/${datasetId}`;      
@@ -104,6 +106,7 @@ export class UnstructuredService {
     return this.http
     .post(url, 
          {tpl:tpl,
+          variablesValuesManuallyFilled:variablesValuesManuallyFilled,
           textElts:textElts})
     .pipe(map(res => {        
       return res;

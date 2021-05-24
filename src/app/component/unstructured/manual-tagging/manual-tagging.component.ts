@@ -9,7 +9,7 @@ import { VariableValue } from 'src/app/model/VariableValue';
 export class ManualTaggingComponent implements OnInit {
 
   @Input()
-  variableValues:VariableValue[];
+  variablesValues:VariableValue[];
 
   constructor() { }
 
