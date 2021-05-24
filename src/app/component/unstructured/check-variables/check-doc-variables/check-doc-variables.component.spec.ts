@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CheckDocVariablesComponent } from './check-doc-variables.component';
 
@@ -6,7 +6,7 @@ describe('CheckDocVariablesComponent', () => {
   let component: CheckDocVariablesComponent;
   let fixture: ComponentFixture<CheckDocVariablesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CheckDocVariablesComponent ]
     })

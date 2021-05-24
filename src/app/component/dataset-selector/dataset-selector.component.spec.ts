@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { DatasetSelectorComponent } from './dataset-selector.component';
 
@@ -6,7 +6,7 @@ describe('DatasetSelectorComponent', () => {
   let component: DatasetSelectorComponent;
   let fixture: ComponentFixture<DatasetSelectorComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ DatasetSelectorComponent ]
     })

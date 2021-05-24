@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CheckAnonymizedDocComponent } from './check-anonymized-doc.component';
 
@@ -6,7 +6,7 @@ describe('CheckAnonymizedDocComponent', () => {
   let component: CheckAnonymizedDocComponent;
   let fixture: ComponentFixture<CheckAnonymizedDocComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CheckAnonymizedDocComponent ]
     })
