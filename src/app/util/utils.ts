@@ -1,5 +1,4 @@
 import * as Moment from 'moment-timezone';
-import { isNumber } from 'util';
 import { Observable, of } from 'rxjs';
 
 export class Utils {
@@ -95,7 +94,7 @@ export class Utils {
     static getEnumInts(enumType):number[] {
       var result:number[] = [];
       for (let item in enumType) {
-        if (isNumber(Number(item))) {
+        if (typeof item === 'number') {
             result.push(Number(item));
         }
       }
