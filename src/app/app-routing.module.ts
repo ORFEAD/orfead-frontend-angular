@@ -7,6 +7,7 @@ import { ChoixVariableAVerifierComponent } from './component/page/choix-variable
 import { VerificationVariableComponent } from './component/page/verification-variable/verification-variable.component';
 import { UtilisateursComponent } from './component/page/utilisateurs/utilisateurs.component';
 import { UtilisateurComponent } from './component/page/utilisateur/utilisateur.component';
+import { PageExportDatasetComponent } from './component/page/page-export-dataset/page-export-dataset.component';
 
 const routes: Routes = [
   // { path: 'deals', component: DealsComponent},
@@ -18,6 +19,7 @@ const routes: Routes = [
   // { path: 'settings/roles', component: RolesComponent, canActivate: [AuthGuardService] },
   { path: 'choix-variable-a-verifier', component: ChoixVariableAVerifierComponent, canActivate: [AuthGuardService] },
   { path: 'verification-variable/:dataset_id/:variable_id/:final-checks-only', component: VerificationVariableComponent, canActivate: [AuthGuardService] },
+  { path: 'export-dataset', component: PageExportDatasetComponent, canActivate: [AuthGuardService] },
   { path: '', component: DashboardComponent, canActivate: [AuthGuardService] },
   // { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
     

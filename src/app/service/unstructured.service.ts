@@ -32,7 +32,7 @@ export class UnstructuredService {
 
   processDocFile(file,datasetId:string):Observable<any> {
 
-    var url = `${this.apiURL}/process-doc-file/${datasetId}/${file.name}`;  
+    var url = `${this.apiURL}/process-doc-file/${datasetId}`;  
 
     const dataset_password = localStorage.getItem(
       Utils.getNameOfDatasetPasswordAttributeInLocalStorage(datasetId)

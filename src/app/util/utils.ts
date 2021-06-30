@@ -65,6 +65,27 @@ export class Utils {
       return `x-password-for-dataset-${datasetId}`;
     }
 
+    // Algorithm called Fisher-Yates shuffle. 
+    // The idea is to walk the array in the reverse order and swap each element with a random one before it
+    static shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1)); // random index from 0 to i
+    
+        // swap elements array[i] and array[j]
+        // we use "destructuring assignment" syntax to achieve that
+        // you'll find more details about that syntax in later chapters
+        // same can be written as:
+        // let t = array[i]; array[i] = array[j]; array[j] = t
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+
+    static getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+    }
+
     // Eg. Thu Aug 08 2019 00:00:00 GMT+0800 (Singapore Standard Time) -> Thu Aug 08 2019 08:00:00 GMT+0800 (Singapore Standard Time)
     static forceDateToUTC(date:Date){ 
         if (date == null) {

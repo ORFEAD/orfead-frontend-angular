@@ -2,168 +2,62 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="fr" datatype="plaintext" original="ng2.template">
     <body>
-      <trans-unit id="confusion_matrix_tooltip" datatype="html">
-        <source>Les valeurs initiales (i.e. prédiction) sont en ligne ; les valeurs vérifiées (i.e. réalité) sont en colonne</source>
+      <trans-unit id="choose_at_least_x_words" datatype="html">
+        <source>Choisir au minimum <x id="INTERPOLATION" equiv-text="{{minNbOfWordsRequired}}"/> mots</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/value-check/component/data-check/choose-variable-to-check/choose-variable-to-check.component.html</context>
-          <context context-type="linenumber">60</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="sensitivity_tooltip" datatype="html">
-        <source> Se = TP / P</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/value-check/component/data-check/choose-variable-to-check/choose-variable-to-check.component.html</context>
-          <context context-type="linenumber">64</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="specificity_tooltip" datatype="html">
-        <source> Sp = TN / N</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/value-check/component/data-check/choose-variable-to-check/choose-variable-to-check.component.html</context>
-          <context context-type="linenumber">70</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="precision_tooltip" datatype="html">
-        <source> Prec = TP / P predicted</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/value-check/component/data-check/choose-variable-to-check/choose-variable-to-check.component.html</context>
-          <context context-type="linenumber">75</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="0722b673d1dec9eeb3471a336d78699085d31033" datatype="html">
-        <source>Vérifier des valeurs</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/value-check/component/data-check/choose-variable-to-check/choose-variable-to-check.component.html</context>
-          <context context-type="linenumber">120</context>
-        </context-group>
-        <note priority="1" from="description">check_values</note>
-      </trans-unit>
-      <trans-unit id="58c7bac4d083b2d05979aa60583dd36219c00c89" datatype="html">
-        <source>Arbitrer des valeurs</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/value-check/component/data-check/choose-variable-to-check/choose-variable-to-check.component.html</context>
-          <context context-type="linenumber">125</context>
-        </context-group>
-        <note priority="1" from="description">arbitrate_check_value_conflicts</note>
-      </trans-unit>
-      <trans-unit id="save_and_go_to_prev_value" datatype="html">
-        <source>Enregistrer et revenir à la valeur précédente</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/value-check/component/data-check/check-variable/check-variable.component.html</context>
-          <context context-type="linenumber">28</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="value_is_not_missing" datatype="html">
-        <source>La valeur est présente</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/value-check/component/data-check/check-variable/check-variable.component.html</context>
-          <context context-type="linenumber">42</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="value_is_missing" datatype="html">
-        <source>La valeur est manquante</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/value-check/component/data-check/check-variable/check-variable.component.html</context>
-          <context context-type="linenumber">49</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="save_and_go_to_next_value" datatype="html">
-        <source>Enregistrer et passer à la valeur suivante</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/value-check/component/data-check/check-variable/check-variable.component.html</context>
-          <context context-type="linenumber">77</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="load_latest_version" datatype="html">
-        <source>Get new version</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/frontend-version/component/app-version/app-version.component.html</context>
-          <context context-type="linenumber">6</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="a_new_version_is_available_short" datatype="html">
-        <source>New version available!</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/frontend-version/component/app-version/app-version.component.html</context>
-          <context context-type="linenumber">2</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="edit_user_invite" datatype="html">
-        <source>Édition compte utilisateur</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/appuser/component/user-details/user-details.component.html</context>
-          <context context-type="linenumber">3</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="create_user" datatype="html">
-        <source>Ajouter un utilisateur</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/appuser/component/users/users.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="sourcefile">src/app/component/dataset-password/dataset-password.component.html</context>
+          <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="choose" datatype="html">
-        <source>Choose</source>
+        <source>Choisir...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/dataset-password/dataset-password.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/module/appuser/component/users/users.component.html</context>
           <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="existing_users" datatype="html">
-        <source>Existing users</source>
+      <trans-unit id="5aa2ed5aabede86d74b39294f8bc5524a4d2b243" datatype="html">
+        <source> Conservez ces mots dans un lieu sûr, ils vous seront de nouveau demandés pour chaque nouveau poste utilisateur ou si vous videz le cache de votre navigateur</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/appuser/component/users/users.component.html</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="sourcefile">src/app/component/dataset-password/dataset-password.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+        <note priority="1" from="description">save_these_words_in_a_safe_place</note>
+      </trans-unit>
+      <trans-unit id="save" datatype="html">
+        <source>Enregistrer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/dataset-password/dataset-password.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/unstructured/check-doc-processing/check-doc-processing.component.html</context>
+          <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="field_is_required" datatype="html">
-        <source>Field is required</source>
+      <trans-unit id="add_file" datatype="html">
+        <source>Choisir les fichiers</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/component/page/login/login.component.html</context>
-          <context context-type="linenumber">18</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/component/page/login/login.component.html</context>
-          <context context-type="linenumber">29</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
-          <context context-type="linenumber">29</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
-          <context context-type="linenumber">68</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
-          <context context-type="linenumber">95</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
-          <context context-type="linenumber">122</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
-          <context context-type="linenumber">149</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
-          <context context-type="linenumber">186</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
-          <context context-type="linenumber">219</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
-          <context context-type="linenumber">252</context>
+          <context context-type="sourcefile">src/app/component/file-uploader/file-uploader.component.html</context>
+          <context context-type="linenumber">5</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="login_panel_hader" datatype="html">
-        <source>Login</source>
+      <trans-unit id="uploader" datatype="html">
+        <source>Uploader</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/component/page/login/login.component.html</context>
-          <context context-type="linenumber">3</context>
+          <context context-type="sourcefile">src/app/component/file-uploader/file-uploader.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cancelLabel" datatype="html">
+        <source>Annuler</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/file-uploader/file-uploader.component.html</context>
+          <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="my_account" datatype="html">
@@ -182,6 +76,13 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/component/main-menu/main-menu.component.html</context>
           <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="not_available_in_this_demo" datatype="html">
+        <source>Not available in this demo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/misc/page-not-accessible/page-not-accessible.component.html</context>
+          <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
       <trans-unit id="data_qualification" datatype="html">
@@ -706,7 +607,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="pseudo_value" datatype="html">
-        <source>Valeur psudonymisée</source>
+        <source>Valeur pseudonymisée</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
           <context context-type="linenumber">83</context>
@@ -733,12 +634,107 @@
           <context context-type="linenumber">86</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="not_available_in_this_demo" datatype="html">
-        <source>Not available in this demo</source>
+      <trans-unit id="dataset_password_for" datatype="html">
+        <source>Mot de passe du dataset</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/component/misc/page-not-accessible/page-not-accessible.component.html</context>
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="word(s)" datatype="html">
+        <source>mot(s)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="export" datatype="html">
+        <source>Export</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="login_panel_hader" datatype="html">
+        <source>Login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/page/login/login.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="field_is_required" datatype="html">
+        <source>Field is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/page/login/login.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/page/login/login.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">122</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">149</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">186</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">219</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
+          <context context-type="linenumber">252</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4ca3ab55347f9c3e5281ae9def184285fe740179" datatype="html">
+        <source> Résultat de l&apos;anonymisation </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/unstructured/check-anonymization/check-anonymized-doc/check-anonymized-doc.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+        <note priority="1" from="description">anonymization_result</note>
+      </trans-unit>
+      <trans-unit id="refresh_variable_extraction" datatype="html">
+        <source>Raffraîchir les variables</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/unstructured/check-variables/check-doc-variables/check-doc-variables.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fdf5f77f60679a7e69f95426c2889e42fa13c165" datatype="html">
+        <source> Résultat de l&apos;extraction des variables </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/unstructured/check-variables/check-doc-variables/check-doc-variables.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+        <note priority="1" from="description">variables_extraction_result</note>
+      </trans-unit>
+      <trans-unit id="08fd56cda030a78cce53024764ccec789930c80b" datatype="html">
+        <source> Tag manuel du document </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/unstructured/manual-tagging/manual-tagging.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+        <note priority="1" from="description">manual_tagging</note>
       </trans-unit>
       <trans-unit id="choose_dataset" datatype="html">
         <source>Choisir le dataset</source>
@@ -754,70 +750,12 @@
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="add_file" datatype="html">
-        <source>Choisir les fichiers</source>
+      <trans-unit id="edit_user_invite" datatype="html">
+        <source>Édition compte utilisateur</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/component/file-uploader/file-uploader.component.html</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="uploader" datatype="html">
-        <source>Uploader</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/component/file-uploader/file-uploader.component.html</context>
-          <context context-type="linenumber">6</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="cancelLabel" datatype="html">
-        <source>Annuler</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/component/file-uploader/file-uploader.component.html</context>
-          <context context-type="linenumber">7</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="4ca3ab55347f9c3e5281ae9def184285fe740179" datatype="html">
-        <source>
-        Résultat de l&apos;anonymisation
-    </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/component/unstructured/check-anonymization/check-anonymized-doc/check-anonymized-doc.component.html</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-        <note priority="1" from="description">anonymization_result</note>
-      </trans-unit>
-      <trans-unit id="refresh_variable_extraction" datatype="html">
-        <source>Raffraîchir les variables</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/component/unstructured/check-variables/check-doc-variables/check-doc-variables.component.html</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="fdf5f77f60679a7e69f95426c2889e42fa13c165" datatype="html">
-        <source>
-        Résultat de l&apos;extraction des variables
-    </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/component/unstructured/check-variables/check-doc-variables/check-doc-variables.component.html</context>
-          <context context-type="linenumber">7</context>
-        </context-group>
-        <note priority="1" from="description">variables_extraction_result</note>
-      </trans-unit>
-      <trans-unit id="save" datatype="html">
-        <source>Enregistrer</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/component/unstructured/check-doc-processing/check-doc-processing.component.html</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="08fd56cda030a78cce53024764ccec789930c80b" datatype="html">
-        <source>
-        Tag manuel du document
-    </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/component/unstructured/manual-tagging/manual-tagging.component.html</context>
+          <context context-type="sourcefile">src/app/module/appuser/component/user-details/user-details.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
-        <note priority="1" from="description">manual_tagging</note>
       </trans-unit>
       <trans-unit id="login" datatype="html">
         <source>Login</source>
@@ -902,6 +840,106 @@
           <context context-type="sourcefile">src/app/module/appuser/component/user-edit/user-edit.component.html</context>
           <context context-type="linenumber">271</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="existing_users" datatype="html">
+        <source>Existing users</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/appuser/component/users/users.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="create_user" datatype="html">
+        <source>Ajouter un utilisateur</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/appuser/component/users/users.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a_new_version_is_available_short" datatype="html">
+        <source>New version available!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/frontend-version/component/app-version/app-version.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="load_latest_version" datatype="html">
+        <source>Get new version</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/frontend-version/component/app-version/app-version.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="save_and_go_to_prev_value" datatype="html">
+        <source>Enregistrer et revenir à la valeur précédente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/value-check/component/data-check/check-variable/check-variable.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="value_is_not_missing" datatype="html">
+        <source>La valeur est présente</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/value-check/component/data-check/check-variable/check-variable.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="value_is_missing" datatype="html">
+        <source>La valeur est manquante</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/value-check/component/data-check/check-variable/check-variable.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="save_and_go_to_next_value" datatype="html">
+        <source>Enregistrer et passer à la valeur suivante</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/value-check/component/data-check/check-variable/check-variable.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confusion_matrix_tooltip" datatype="html">
+        <source>Les valeurs initiales (i.e. prédiction) sont en ligne ; les valeurs vérifiées (i.e. réalité) sont en colonne</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/value-check/component/data-check/choose-variable-to-check/choose-variable-to-check.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sensitivity_tooltip" datatype="html">
+        <source> Se = TP / P</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/value-check/component/data-check/choose-variable-to-check/choose-variable-to-check.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="specificity_tooltip" datatype="html">
+        <source> Sp = TN / N</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/value-check/component/data-check/choose-variable-to-check/choose-variable-to-check.component.html</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="precision_tooltip" datatype="html">
+        <source> Prec = TP / P predicted</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/value-check/component/data-check/choose-variable-to-check/choose-variable-to-check.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0722b673d1dec9eeb3471a336d78699085d31033" datatype="html">
+        <source>Vérifier des valeurs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/value-check/component/data-check/choose-variable-to-check/choose-variable-to-check.component.html</context>
+          <context context-type="linenumber">120</context>
+        </context-group>
+        <note priority="1" from="description">check_values</note>
+      </trans-unit>
+      <trans-unit id="58c7bac4d083b2d05979aa60583dd36219c00c89" datatype="html">
+        <source>Arbitrer des valeurs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/module/value-check/component/data-check/choose-variable-to-check/choose-variable-to-check.component.html</context>
+          <context context-type="linenumber">125</context>
+        </context-group>
+        <note priority="1" from="description">arbitrate_check_value_conflicts</note>
       </trans-unit>
     </body>
   </file>

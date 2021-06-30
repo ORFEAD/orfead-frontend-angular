@@ -1,0 +1,13 @@
+<app-main-menu></app-main-menu>
+<p-toast [hideTransitionOptions]="'5000ms'"></p-toast>
+
+<app-dataset-selector></app-dataset-selector>
+
+<p-button  i18n-label="@@export_as_xlsx" label="Export as .xlsx"              
+                                        icon="fas fa-download" (onClick)="getExcel()"></p-button>   
+
+<div style="clear:both"></div>
+
+
+
+<app-app-version></app-app-version>

@@ -41,10 +41,16 @@ export class MainMenuComponent implements OnInit {
                 routerLink: ['/']
             },
             {
+                label: this.translationService.getTranslation('i18n@@export'),
+                icon: 'fas fa-file-download',
+                routerLink: ['/export-dataset']
+            },
+            {
                 label: this.translationService.getTranslation('i18n@@data_qualification'),
                 icon: 'fas fa-check-circle',
                 routerLink: ['/choix-variable-a-verifier']
             }
+            
         ];
       
        

@@ -87,6 +87,8 @@ import { SpinnerComponent } from './component/misc/spinner/spinner.component';
 import { ManualTaggingComponent } from './component/unstructured/manual-tagging/manual-tagging.component';
 import { CheckAnonymizedTextEltComponent } from './component/unstructured/check-anonymization/check-anonymized-text-elt/check-anonymized-text-elt.component';
 import { VariableValueEditComponent } from './component/variable/variable-value-edit/variable-value-edit.component';
+import { DatasetPasswordComponent } from './component/dataset-password/dataset-password.component';
+import { PageExportDatasetComponent } from './component/page/page-export-dataset/page-export-dataset.component';
 
 // References: - https://devblog.dymel.pl/2017/10/17/angular-preload/
 //             - https://www.tektutorialshub.com/angular/angular-how-to-use-app-initializer/
@@ -124,7 +126,9 @@ export function initializeRolesFactory(authenticationService: AuthenticationServ
     SpinnerComponent,
     ManualTaggingComponent,
     CheckAnonymizedTextEltComponent,
-    VariableValueEditComponent,    
+    VariableValueEditComponent,
+    DatasetPasswordComponent,
+    PageExportDatasetComponent,    
   ],
   entryComponents: [
      // This is needed for displaying the component in a Dynamic Dialog

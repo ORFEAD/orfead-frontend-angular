@@ -190,3 +190,17 @@ button + button {
     opacity: 1;
     background-color: grey;
 }
+
+.p-dialog .p-dialog-content {
+    height: -webkit-fill-available;
+}
+
+.mimic-margins-of-p-dialog-footer{
+    
+    margin-left: -1em;
+    margin-right: -1em;
+    margin-bottom: -1em;
+}
+
+
+

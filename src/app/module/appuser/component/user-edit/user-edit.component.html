@@ -58,7 +58,7 @@
                         name="password" 
                         type="password" 
                         pPassword i18n-placeholder="@@password" placeholder="Password" required 
-                        pattern="^[\w\-$%&@#!+()]{5,}$"/>         
+                        pattern="^[\w\-$%&@#!+()]{8,}$"/>         
                     <div *ngIf="passwordCheck.invalid" >
                         <p-message *ngIf="passwordCheck.hasError('pattern')" 
                             severity="error" 

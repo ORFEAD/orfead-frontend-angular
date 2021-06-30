@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Dataset } from 'src/app/model/Dataset';
 import {DatasetService} from 'src/app/service/dataset.service';
 import { UnstructuredCompIntService } from 'src/app/service/comp-int/unstructured-comp-int.service';
+import { ExportCompIntServiceService } from 'src/app/service/comp-int/export-comp-int-service.service';
  
 @Component({
   selector: 'app-dataset-selector',
@@ -17,7 +18,8 @@ export class DatasetSelectorComponent implements OnInit {
   selectedDataset:Dataset;
 
   constructor(private datasetService:DatasetService,
-              private unstructuredCompIntService:UnstructuredCompIntService) { }
+              private unstructuredCompIntService:UnstructuredCompIntService,
+              private exportCompIntServiceService:ExportCompIntServiceService) { }
 
   ngOnInit(): void {
     this.getDatasets();
@@ -39,6 +41,7 @@ export class DatasetSelectorComponent implements OnInit {
   handleChangeOnDataset() {
     console.log(this.selectedDataset);
     this.unstructuredCompIntService.selectDataset(this.selectedDataset);
+    this.exportCompIntServiceService.selectDataset(this.selectedDataset);
   }
 
 }

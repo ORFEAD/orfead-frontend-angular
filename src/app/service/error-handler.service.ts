@@ -42,7 +42,7 @@ export class ErrorHandlerService {
    public handleErrorCore(error,operation) {
 
     this.processingService.clearProcessesList("ErrorHandlerService.handleErrorCore");
-    // console.error(error);
+    console.error(error);
 
     if (error.status === 401 && operation != "login") {
 //           this.authenticationService.logout();

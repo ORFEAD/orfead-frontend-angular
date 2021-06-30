@@ -29,6 +29,7 @@ export class CheckDocProcessingComponent implements OnInit {
   dataset:Dataset;
 
   readyForSerialization:boolean = false;
+  savedButtonDisabled:boolean = true;
 
   anonymizationInProgress:boolean;
   variablesExtractionInProgress:boolean;
@@ -78,6 +79,7 @@ export class CheckDocProcessingComponent implements OnInit {
     }
   }
 
+
   areRequiredVariableValueManuallyFilledReady():boolean {
     for (let vv of this.variablesValuesManuallyFilled) {
       console.log(vv);
@@ -90,6 +92,12 @@ export class CheckDocProcessingComponent implements OnInit {
 
   areRequiredExtractedVariablesValuesNotNull():boolean{
     console.log(this.resultOfVariablesExtractionAnalysis);
+
+    // If the extraction is not ready, return false
+    if (this.resultOfVariablesExtractionAnalysis == null) {
+      return false;
+    }
+
     for (let vDef of this.getAllVarDefsFromTpl()) {
       if (vDef.required === true && vDef.value == null) {
         return false;

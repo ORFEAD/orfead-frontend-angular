@@ -12,29 +12,22 @@ import { DatasetUnstructuredConf } from '../model/DatasetUnstructuredConf';
 @Injectable({
   providedIn: 'root'
 })
-export class DatasetService {
+export class DatasetUnstructuredConfService {
 
-  private apiURL = environment.apiURL + 'dataset';  // URL to web api
+  private apiURL = environment.apiURL + 'dataset-unstructured-conf';  // URL to web api
 
   constructor(private http: HttpClient,
               private errorHandlerService: ErrorHandlerService) { }
 
-  getDatasetsAccessibleToUser(datasetType:string): Observable<Dataset[]> {
-    var url = this.apiURL + "/all-datasets";     
+  getDatasetUnstructuredConfFromDatasetId(datasetId:string): Observable<DatasetUnstructuredConf> {
+    var url = `${this.apiURL}/dataset-unstructured-conf-from-dataset-id/${datasetId}`;     
     
-    return this.http.post<Dataset[]>(url,
-                                     JSON.stringify({datasetType:datasetType}))    
-    .pipe(map( res =>             
-        this.fromJSONArray(res)
-        ))  
+    return this.http.get<DatasetUnstructuredConf[]>(url)    
+    .pipe(map(res => new DatasetUnstructuredConf(res)))     
     .pipe(
       catchError(this.errorHandlerService.handleError(`getDatasetsAccessibleToUser()`, null))
     );
   }
 
-
-  fromJSONArray(array: Array<Object>): Dataset[] {
-    return array.map(res => new Dataset(res));
-  } 
 
 }

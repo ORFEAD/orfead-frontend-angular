@@ -22,7 +22,7 @@ export class VariableValueEditComponent implements OnInit {
 
   items: SelectItem[];
 
-  constructor(private unstructuredCompIntService:UnstructuredCompIntService,) { }
+  constructor(protected unstructuredCompIntService:UnstructuredCompIntService,) { }
 
   ngOnInit(): void {
     this.items = [];
