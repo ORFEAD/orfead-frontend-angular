@@ -2,9 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Dataset } from 'src/app/model/Dataset';
 import { VariableValue } from 'src/app/model/VariableValue';
+import { TranslationService } from 'src/app/module/translation/service/translation.service';
 import { UnstructuredCompIntService } from 'src/app/service/comp-int/unstructured-comp-int.service';
+import { UnstructuredTopCompIntService } from 'src/app/service/comp-int/unstructured-top-comp-int.service';
 import { FileUploadService } from 'src/app/service/file-upload.service';
 import { ProcessingService } from 'src/app/service/processing.service';
+import { UINotificationService } from 'src/app/service/uinotification.service';
 import { UnstructuredService } from 'src/app/service/unstructured.service';
 import { VariableService } from 'src/app/service/variable.service';
 
@@ -21,6 +24,7 @@ import { VariableService } from 'src/app/service/variable.service';
 export class CheckDocProcessingComponent implements OnInit {
 
   saved:boolean = false;
+  cancelled:boolean = false;
 
   @Input()
   file:any;
@@ -29,7 +33,7 @@ export class CheckDocProcessingComponent implements OnInit {
   dataset:Dataset;
 
   readyForSerialization:boolean = false;
-  savedButtonDisabled:boolean = true;
+  saving:boolean = false;  
 
   anonymizationInProgress:boolean;
   variablesExtractionInProgress:boolean;
@@ -42,7 +46,10 @@ export class CheckDocProcessingComponent implements OnInit {
   constructor(private processingService:ProcessingService,
               private unstructuredService:UnstructuredService,
               private unstructuredCompIntService:UnstructuredCompIntService,
-              private variableService:VariableService) { 
+              private unstructuredTopCompIntService:UnstructuredTopCompIntService,
+              private variableService:VariableService,
+              private translationService:TranslationService,
+              private notificationService:UINotificationService) { 
 
     unstructuredCompIntService.manualModificationToTextElt$.subscribe(res => {
       this.readyForSerialization = false;
@@ -81,17 +88,28 @@ export class CheckDocProcessingComponent implements OnInit {
 
 
   areRequiredVariableValueManuallyFilledReady():boolean {
+        
+    let missingRequiredVars = [];
     for (let vv of this.variablesValuesManuallyFilled) {
-      console.log(vv);
+      console.log(vv);      
       if (vv.variable.required === true && (vv.valueAsStr == null || vv.valueAsStr.length == 0)) {
-        return false;
+        missingRequiredVars.push(vv.variable.name);        
       }
+    }
+
+    if (missingRequiredVars.length > 0) {
+      let warnMsg = `${this.translationService.getTranslation("the_following_required_variables_are_missing")} ${missingRequiredVars.join(", ")} `;      
+      console.warn(warnMsg);
+      this.notificationService.notifyWarn(warnMsg);
+      return false;
     }
     return true;
   }
 
   areRequiredExtractedVariablesValuesNotNull():boolean{
     console.log(this.resultOfVariablesExtractionAnalysis);
+
+    let missingRequiredVars = [];
 
     // If the extraction is not ready, return false
     if (this.resultOfVariablesExtractionAnalysis == null) {
@@ -100,8 +118,14 @@ export class CheckDocProcessingComponent implements OnInit {
 
     for (let vDef of this.getAllVarDefsFromTpl()) {
       if (vDef.required === true && vDef.value == null) {
-        return false;
+        missingRequiredVars.push(vDef.name);               
       }
+    }
+
+    if (missingRequiredVars.length > 0) {
+      let warnMsg = `${this.translationService.getTranslation("the_following_required_variables_are_missing")} ${missingRequiredVars.join(", ")} `;      
+      this.notificationService.notifyWarn(warnMsg);
+      return false;
     }
     return true;
   }
@@ -109,6 +133,11 @@ export class CheckDocProcessingComponent implements OnInit {
   handleClickOnSaveButton(evt) {
     this.serializeVariablesValues();
     // this.processTextElts(false);
+  }
+
+  handleClickOnCancelButton(evt) {
+    this.cancelled = true;
+    this.unstructuredTopCompIntService.announceDocRemovedFromProcessingStack(this.file);
   }
 
   initializeVariableValuesForVariablesFilledInByUser() {
@@ -127,7 +156,10 @@ export class CheckDocProcessingComponent implements OnInit {
   }
 
   processDocFile() {
+    this.unstructuredTopCompIntService.announceDocStartedProcessingStack(this.file);
+
     this.unstructuredService.processDocFile(this.file,this.dataset.id).subscribe(res => {
+
 
       this.variablesExtractionInProgress = false;
       this.anonymizationInProgress = false;
@@ -139,6 +171,7 @@ export class CheckDocProcessingComponent implements OnInit {
         this.resultOfVariablesExtractionAnalysis = res.tpl;        
 
         this.unstructuredCompIntService.announceResultOfVariablesExtraction(res.tpl);
+        this.unstructuredTopCompIntService.announceDocDoneProcessingStack(this.file);
       }
     });
   }
@@ -152,6 +185,8 @@ export class CheckDocProcessingComponent implements OnInit {
     // }
     // return;
     
+    this.unstructuredTopCompIntService.announceDocStartedProcessingStack(this.file);
+    
     this.unstructuredService.processTextElts(this.resultOfAnonymizationAnalysis,
                                              [], // this.manuallyTaggedElts,
                                              this.dataset.id,
@@ -163,10 +198,15 @@ export class CheckDocProcessingComponent implements OnInit {
       if (res != null) {
         console.log(res);
 
+        let successMsg = `${this.file.name} ${this.translationService.getTranslation("@@variable_extration_succeeded")}`;
+        console.log(successMsg); 
+        this.notificationService.notifySuccess(successMsg);
+
         if (exitBeforeSerialization) {
           this.resultOfAnonymizationAnalysis = res.textElts;
           this.resultOfVariablesExtractionAnalysis = res.tpl;
           this.unstructuredCompIntService.announceResultOfVariablesExtraction(res.tpl);
+          this.unstructuredTopCompIntService.announceDocDoneProcessingStack(this.file);
         } else {
           this.saved = true;
         }
@@ -176,15 +216,17 @@ export class CheckDocProcessingComponent implements OnInit {
   }
 
   serializeVariablesValues() {
+    this.saving = true;
     this.unstructuredService.serializeVariablesValues(this.resultOfVariablesExtractionAnalysis,
                                                       this.resultOfAnonymizationAnalysis,
                                                       this.variablesValuesManuallyFilled,
                                                       this.dataset.id).subscribe(res => {
+        this.saving = true;
         if (res != null) {
           this.saved = true;
+          this.unstructuredTopCompIntService.announceDocRemovedFromProcessingStack(this.file);
         }
     });
-
   }
 
   getAllVarDefsFromTpl() {

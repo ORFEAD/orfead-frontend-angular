@@ -3,6 +3,7 @@ import { SelectItem } from 'primeng/api';
 import {IDENTIFYING_VALUE_TYPE} from 'src/app/enum/IDENTIFYING_VALUE_TYPE'
 import { TranslationService } from 'src/app/module/translation/service/translation.service';
 import { UnstructuredCompIntService } from 'src/app/service/comp-int/unstructured-comp-int.service';
+import { UINotificationService } from 'src/app/service/uinotification.service';
 
 @Component({
   selector: 'app-check-anonymized-text-elt',
@@ -26,10 +27,11 @@ export class CheckAnonymizedTextEltComponent implements OnInit {
   hidden:boolean = false;
   tableSeparator:boolean = false;
 
-  operatorDecision:boolean = false;
+  operatorDecision:string = null;
 
   constructor(private unstructuredCompIntService:UnstructuredCompIntService,
-              private translationService:TranslationService) { 
+              private translationService:TranslationService,
+              private notificationService:UINotificationService) { 
     
   }
 
@@ -40,23 +42,24 @@ export class CheckAnonymizedTextEltComponent implements OnInit {
                                      {label: 'Partie de code postal', value: IDENTIFYING_VALUE_TYPE.zip_code},
                                      {label: 'Information non identifiante', value: null}];
 
-    this.partOfSpeechSelectItems = [{value: 'ADJ', label: this.translationService.getTranslation('adjective_abrv')}, 
-                                    {value: 'ADP', label: this.translationService.getTranslation('adposition_abrv')},
-                                    {value: 'ADV', label: this.translationService.getTranslation('adverb_abrv')},
-                                    {value: 'AUX', label: this.translationService.getTranslation('auxiliary_abrv')},
-                                    {value: 'CCONJ', label: this.translationService.getTranslation('coordinating_conjunction_abrv')},
-                                    {value: 'DET', label: this.translationService.getTranslation('determiner_abrv')},
-                                    {value: 'INTJ', label: this.translationService.getTranslation('interjection_abrv')},
-                                    {value: 'NOUN', label: this.translationService.getTranslation('noun_abrv')},
-                                    {value: 'NUM', label: this.translationService.getTranslation('numeral_abrv')},
-                                    {value: 'PART', label: this.translationService.getTranslation('particle_abrv')},
-                                    {value: 'PRON', label: this.translationService.getTranslation('pronoun_abrv')},
-                                    {value: 'PROPN', label: this.translationService.getTranslation('proper_noun_abrv')},
-                                    {value: 'PUNCT', label: this.translationService.getTranslation('punctuation_abrv')},
-                                    {value: 'SCONJ', label: this.translationService.getTranslation('subordinating_conjunction_abrv')},
-                                    {value: 'SYM', label: this.translationService.getTranslation('symbol_abrv')},
-                                    {value: 'VERB', label: this.translationService.getTranslation('verb_abrv')},
-                                    {value: 'X', label: this.translationService.getTranslation('other_abrv')},];
+    this.partOfSpeechSelectItems = [
+      {value: 'NOUN', label: this.translationService.getTranslation('noun_abrv')},
+      {value: 'PROPN', label: this.translationService.getTranslation('proper_noun_abrv')},
+      {value: 'ADJ', label: this.translationService.getTranslation('adjective_abrv')}, 
+      {value: 'ADP', label: this.translationService.getTranslation('adposition_abrv')},
+      {value: 'ADV', label: this.translationService.getTranslation('adverb_abrv')},
+      {value: 'AUX', label: this.translationService.getTranslation('auxiliary_abrv')},
+      {value: 'CCONJ', label: this.translationService.getTranslation('coordinating_conjunction_abrv')},
+      {value: 'DET', label: this.translationService.getTranslation('determiner_abrv')},
+      {value: 'INTJ', label: this.translationService.getTranslation('interjection_abrv')},
+      {value: 'NUM', label: this.translationService.getTranslation('numeral_abrv')},
+      {value: 'PART', label: this.translationService.getTranslation('particle_abrv')},
+      {value: 'PRON', label: this.translationService.getTranslation('pronoun_abrv')},
+      {value: 'PUNCT', label: this.translationService.getTranslation('punctuation_abrv')},
+      {value: 'SCONJ', label: this.translationService.getTranslation('subordinating_conjunction_abrv')},
+      {value: 'SYM', label: this.translationService.getTranslation('symbol_abrv')},
+      {value: 'VERB', label: this.translationService.getTranslation('verb_abrv')},
+      {value: 'X', label: this.translationService.getTranslation('other_abrv')},];
  
     // Convert the identifying information type
     if (this.textElt.identifyingValueType != null) {
@@ -74,8 +77,20 @@ export class CheckAnonymizedTextEltComponent implements OnInit {
 
   }
 
+  displayNotificationNeedToRefresh() {
+    this.notificationService.notifyWarn(
+      this.translationService.getTranslation("you_will_need_to_refresh_the_variables")
+      );
+  }
+
   displayDialog(event) {
     this.overlayPanel.show(event);
+  }
+
+  handleChangeOnApplyManualTagToNextDocuments(event) {
+    this.textElt.applyManualTagToNextDocuments = event;
+    this.displayNotificationNeedToRefresh();
+    console.log(this.textElt);
   }
 
   handleOperatorDecision(event) {
@@ -89,8 +104,11 @@ export class CheckAnonymizedTextEltComponent implements OnInit {
       this.textElt.applyManualTagToNextDocuments = this.applyManualTagToNextDocuments;
       this.textElt.identifyingValueType = null; // Workwound to the test for styling the text element
     } 
-    this.overlayPanel.hide();
+    console.log(this.textElt);
+    // this.overlayPanel.hide();
     this.unstructuredCompIntService.announceManualModificationToTextElt(this.textElt);
+
+    this.displayNotificationNeedToRefresh();
   }
 
 }

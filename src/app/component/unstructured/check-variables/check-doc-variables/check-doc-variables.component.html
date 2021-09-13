@@ -1,7 +1,7 @@
 <p-panel >
     <app-spinner *ngIf="inProgress"></app-spinner>
     <ng-template pTemplate="icons">
-        <button pButton [disabled]="!needRefresh" i18n-label="@@refresh_variable_extraction" label="Raffraîchir les variables" 
+        <button pButton [disabled]="disableRefreshButton" i18n-label="@@refresh_variable_extraction" label="Raffraîchir les variables" 
             icon="fas fa-sync-alt" (click)="handleClickOnRefreshButton($event)"></button>        
     </ng-template>
     <ng-template pTemplate="header" i18n="variables_extraction_result">
@@ -11,14 +11,18 @@
         <!-- <app-check-doc-variable         
             *ngFor="let _var of variables" [variable]="_var"></app-check-doc-variable> -->
 
-        <p-table #dt [columns]="cols" [value]="variablesForTableDisplay">
+        <p-table #dt [columns]="cols" [value]="variablesForTableDisplay" 
+                [scrollable]="true" scrollHeight="75vh">
 
             <!-- Columns headers and filters-->
             <ng-template pTemplate="header" let-rowData let-columns>
                 <tr>
                     <ng-container *ngFor="let col of columns" >
                         <th [pSortableColumn]="col.field">
-                            <span >{{col.header}}</span>
+                            <span class="d-inline-block text-truncate overflow-hidden" style="max-width: 100%;" 
+                                      data-toggle="tooltip" [title]="col.header">
+                                {{col.header}}
+                            </span>
                             <p-sortIcon field="col.field"></p-sortIcon>
                         </th>
                     </ng-container>                    

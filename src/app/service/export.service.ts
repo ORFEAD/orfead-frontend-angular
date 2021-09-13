@@ -18,11 +18,13 @@ export class ExportService {
     private errorHandlerService: ErrorHandlerService) { }
 
 
-  getDatasetAsExcel(dataset:Dataset): Observable<any> {
-    const url = `${this.apiURL}/get-dataset-as-xlsx/${dataset.id}`;
+  getDatasetAsExcel(dataset:Dataset, exportLevel:number): Observable<any> {
+    const url = `${this.apiURL}/get-dataset-as-xlsx`;
     return this.http
       // load the image as a blob
-      .get(url, 
+      .post(url,
+            {datasetId: dataset.id,
+             exportLevel:exportLevel}, 
             {responseType: 'blob'})
       .pipe(
         catchError(this.errorHandlerService.handleError(`getDatasetAsExcel()`, []))

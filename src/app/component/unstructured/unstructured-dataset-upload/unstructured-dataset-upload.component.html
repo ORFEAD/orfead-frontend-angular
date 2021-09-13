@@ -7,14 +7,26 @@
         <div class="p-col">
             <h3 i18n="@@choose_files">Choisir les fichiers à uploader</h3>
             <app-file-uploader [dataset]="dataset"></app-file-uploader>
+            <div class="p-grid">
+                <div class="p-col-1">
+                    <app-spinner *ngIf="filesNamesProcessingInProgress.length > 0"></app-spinner>
+                </div>
+                <div class="p-col-11">
+                    <ul>
+                        <li *ngFor="let n of filesNamesProcessingInProgress">{{n}}</li>            
+                    </ul>                            
+                </div>
+            </div>
         </div>
     </div>  
 </p-panel>
 
 <p-panel [showHeader]="false">
-    <app-check-doc-processing *ngFor="let f of filesForProcessing" 
-        [file]="f" [dataset]="dataset" >
-    </app-check-doc-processing>
+    <div *ngFor="let f of filesForProcessing">
+        <app-check-doc-processing  *ngIf="!filesNamesRemovedFromStack.includes(f.name)"        
+            [file]="f" [dataset]="dataset" >
+        </app-check-doc-processing>
+    </div>
 </p-panel>
 
 <!-- <app-check-anonymized-doc 

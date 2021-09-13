@@ -27,7 +27,6 @@ export class VariableValueEditComponent implements OnInit {
   ngOnInit(): void {
     this.items = [];
     for (let possibleValue of this.variableValue.variable.possibleValuesAsStrArr) {
-      console.log(`possibleValue[${possibleValue}]`);
       this.items.push({
         label:possibleValue,
         value:possibleValue

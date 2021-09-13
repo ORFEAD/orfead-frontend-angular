@@ -12,13 +12,15 @@ import { CheckDocProcessingComponent } from '../check-doc-processing/check-doc-p
 import { Md5 } from 'ts-md5/dist/md5';
 import { Utils } from 'src/app/util/utils';
 import { TranslationService } from 'src/app/module/translation/service/translation.service';
+import { UnstructuredTopCompIntService } from 'src/app/service/comp-int/unstructured-top-comp-int.service';
+import { UINotificationService } from 'src/app/service/uinotification.service';
 
 
 @Component({
   selector: 'app-unstructured-dataset-upload',
   templateUrl: './unstructured-dataset-upload.component.html',
   styleUrls: ['./unstructured-dataset-upload.component.scss'],
-  providers: [DialogService]
+  providers: [DialogService] 
 })
 export class UnstructuredDatasetUploadComponent implements OnInit {
 
@@ -29,15 +31,24 @@ export class UnstructuredDatasetUploadComponent implements OnInit {
 
   subscriptionToDatasetSelection: Subscription;
   subscriptionToFileInTreatment: Subscription;
+  subscriptionToDocRemovedFromProcessingStack: Subscription;
+  subscriptionToDocProcessingInProgressStack: Subscription;
+  subscriptionToDocDoneProcessingStack: Subscription;
 
+  filesNamesRemovedFromStack:any[] = [];
+  filesNamesProcessingInProgress:any[] = [];
+  displayProcessingSpinner = false;
 
   constructor(private processingService:ProcessingService,
               private componentsInteractionService:UnstructuredCompIntService,
+              private unstructuredTopCompIntService:UnstructuredTopCompIntService,
               private datasetUnstructuredConfService:DatasetUnstructuredConfService,
               public dialogService: DialogService,
+              private notificationService:UINotificationService,
               private translationService:TranslationService,
               private datasetPasswordService:DatasetPasswordService) {
 
+    // Subscribe to the selection of dataset
     this.subscriptionToDatasetSelection = this.componentsInteractionService.datasetSelected$.subscribe(
       dataset => {
        
@@ -57,12 +68,58 @@ export class UnstructuredDatasetUploadComponent implements OnInit {
       }
     );
 
+    // Subscribe to the upload of a file
     this.subscriptionToFileInTreatment = 
-    this.componentsInteractionService.docForProcessing$.subscribe(
+      this.componentsInteractionService.docForProcessing$.subscribe(
+        f => {
+          // Remove the filename from the list of files removed from the stack
+          // This is needed because we may want to upload a file several times
+          this.filesNamesRemovedFromStack = this.filesNamesRemovedFromStack.filter(
+            x => {
+              x != f["name"];
+            }
+          );
+          this.filesForProcessing.push(f);          
+        }
+      );
+
+    // Subscribe to file being totally done with its treatment
+    this.subscriptionToDocRemovedFromProcessingStack = 
+      this.unstructuredTopCompIntService.docRemovedFromProcessingStack$.subscribe(
+        f => {
+          this.filesNamesRemovedFromStack.push(f["name"]);
+          let idxOfFileDone = this.filesForProcessing.findIndex(x => 
+            x["name"] == f["name"]
+          );
+          // this.filesForProcessing = this.filesForProcessing.filter(x => {
+          //   x["name"] != f["name"];
+          // });
+          this.filesForProcessing.splice(idxOfFileDone,1);
+          }
+      );
+
+    // Subscribe to file that start to be processed
+    this.subscriptionToDocProcessingInProgressStack = 
+    this.unstructuredTopCompIntService.docStartedProcessingStack$.subscribe(
       f => {
-        this.filesForProcessing.push(f);
-      }
+        this.filesNamesProcessingInProgress.push(f["name"]);
+        this.displayProcessingSpinner = true;
+        }
     );
+
+    // Subscribe to file being done with processing
+    this.subscriptionToDocDoneProcessingStack = 
+      this.unstructuredTopCompIntService.docDoneProcessingStack$.subscribe(
+        f => {
+          let idxOfFileNameDone = this.filesNamesProcessingInProgress.indexOf(f["name"]);
+          this.filesNamesProcessingInProgress.splice(idxOfFileNameDone,1);
+          // this.filesNamesProcessingInProgress = this.filesNamesProcessingInProgress.filter(x => {
+          //   x["name"] != f["name"];
+          // });
+          this.notificationService.notifyInfo(`${this.translationService.getTranslation("done_processing")}[${f["name"]}]`);
+          this.displayProcessingSpinner = false;
+          }
+      );
 
   }  
 

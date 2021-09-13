@@ -17,6 +17,8 @@ export class UnstructuredCompIntService {
     private askTextEltsProcessingSource = new Subject<any>();
     private changeOnVariableValueManuallyFilledSource = new Subject<boolean>();
 
+
+
     // Observable string streams
     datasetSelected$ = this.datasetSelectedSource.asObservable();
     docForProcessing$ = this.docForProcessingSource.asObservable();
@@ -26,6 +28,9 @@ export class UnstructuredCompIntService {
     resultOfVariablesExtraction$ = this.resultOfVariablesExtractionSource.asObservable();
     askTextEltsProcessing$ = this.askTextEltsProcessingSource.asObservable();
     changeOnVariableValueManuallyFilled$ = this.changeOnVariableValueManuallyFilledSource.asObservable();
+
+    
+    
   
     // Service message commands
     selectDataset(dataset: Dataset) {
@@ -59,5 +64,7 @@ export class UnstructuredCompIntService {
     announceChangeOnVariableValueManuallyFilled() {
       this.changeOnVariableValueManuallyFilledSource.next(true);
     }
+
+    
 
 }

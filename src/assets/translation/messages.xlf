@@ -20,13 +20,12 @@
           <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5aa2ed5aabede86d74b39294f8bc5524a4d2b243" datatype="html">
+      <trans-unit id="save_these_words_in_a_safe_place" datatype="html">
         <source> Conservez ces mots dans un lieu sûr, ils vous seront de nouveau demandés pour chaque nouveau poste utilisateur ou si vous videz le cache de votre navigateur</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/component/dataset-password/dataset-password.component.html</context>
           <context context-type="linenumber">22,23</context>
         </context-group>
-        <note priority="1" from="description">save_these_words_in_a_safe_place</note>
       </trans-unit>
       <trans-unit id="save" datatype="html">
         <source>Enregistrer</source>
@@ -36,7 +35,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/component/unstructured/check-doc-processing/check-doc-processing.component.html</context>
-          <context context-type="linenumber">5</context>
+          <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="add_file" datatype="html">
@@ -64,7 +63,7 @@
         <source>Mon compte</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/component/main-menu/main-menu.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">17</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
@@ -75,7 +74,7 @@
         <source>Logout</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/component/main-menu/main-menu.component.html</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="not_available_in_this_demo" datatype="html">
@@ -655,6 +654,41 @@
           <context context-type="linenumber">89</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="export_level" datatype="html">
+        <source>Niveau de l&apos;export</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="variable_extration_succeeded" datatype="html">
+        <source>Extraction des variables réussie</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="you_will_need_to_refresh_the_variables" datatype="html">
+        <source>Il vous faudra raffraîchir les variables pour tenir compte de ces modifications</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="the_following_required_variables_are_missing" datatype="html">
+        <source>Les variables obligatoires suivantes sont manquantes : </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="done_processing" datatype="html">
+        <source>Traitement fini</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/other-translations/other-translations.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="login_panel_hader" datatype="html">
         <source>Login</source>
         <context-group purpose="location">
@@ -705,6 +739,38 @@
           <context context-type="linenumber">252</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="choose_dataset" datatype="html">
+        <source>Choisir le dataset : </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/page/page-export-dataset/page-export-dataset.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/unstructured/unstructured-dataset-upload/unstructured-dataset-upload.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="choose_the_export_level" datatype="html">
+        <source>Choisir le niveau d&apos;export : </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/page/page-export-dataset/page-export-dataset.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="instruction_on_export_level" datatype="html">
+        <source>NOTE : Plus le niveau est élevé, plus il y aura de variables dans le fichier Excel. Les variables de niveau supérieur à 1 sont généralement utilisées pour du contrôle qualité.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/page/page-export-dataset/page-export-dataset.component.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="export_as_xlsx" datatype="html">
+        <source>Export .xlsx</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/page/page-export-dataset/page-export-dataset.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="4ca3ab55347f9c3e5281ae9def184285fe740179" datatype="html">
         <source> Résultat de l&apos;anonymisation </source>
         <context-group purpose="location">
@@ -712,6 +778,13 @@
           <context context-type="linenumber">6,7</context>
         </context-group>
         <note priority="1" from="description">anonymization_result</note>
+      </trans-unit>
+      <trans-unit id="cancel" datatype="html">
+        <source>Annuler</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/unstructured/check-doc-processing/check-doc-processing.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="refresh_variable_extraction" datatype="html">
         <source>Raffraîchir les variables</source>
@@ -735,13 +808,6 @@
           <context context-type="linenumber">4,5</context>
         </context-group>
         <note priority="1" from="description">manual_tagging</note>
-      </trans-unit>
-      <trans-unit id="choose_dataset" datatype="html">
-        <source>Choisir le dataset</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/component/unstructured/unstructured-dataset-upload/unstructured-dataset-upload.component.html</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="choose_files" datatype="html">
         <source>Choisir les fichiers à uploader</source>

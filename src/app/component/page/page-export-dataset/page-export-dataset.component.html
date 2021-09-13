@@ -1,11 +1,26 @@
 <app-main-menu></app-main-menu>
 <p-toast [hideTransitionOptions]="'5000ms'"></p-toast>
 
-<app-dataset-selector></app-dataset-selector>
+<p-panel [showHeader]="false">
 
-<p-button  i18n-label="@@export_as_xlsx" label="Export as .xlsx"              
-                                        icon="fas fa-download" (onClick)="getExcel()"></p-button>   
+    <div class="form-group">
+        <label for="dataset-selector" i18n="@@choose_dataset">Choisir le dataset : </label>
+        <app-dataset-selector id="dataset-selector"></app-dataset-selector>        
+    </div>
 
+    <div class="form-group" *ngIf="dataset">
+        <label for="exportLevel" i18n="@@choose_the_export_level">Choisir le niveau d'export : </label>
+        <p-dropdown [options]="exportLevelSelectItems" [(ngModel)]="exportLevel"></p-dropdown>
+        <small id="emailHelp" class="form-text text-muted">
+            <span i18n="@@instruction_on_export_level">NOTE : Plus le niveau est élevé, plus il y aura de variables dans le fichier Excel. 
+                    Les variables de niveau supérieur à 1 sont généralement utilisées pour du contrôle qualité.</span></small>
+    </div>
+    
+
+    <p-button  i18n-label="@@export_as_xlsx" label="Export .xlsx"              
+                                            icon="fas fa-download" (onClick)="getExcel()"></p-button>   
+
+</p-panel>
 <div style="clear:both"></div>
 
 

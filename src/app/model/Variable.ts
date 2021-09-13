@@ -3,6 +3,7 @@ import { Appuser } from 'src/app/module/appuser/model/Appuser';
 import { Dataset } from "./Dataset";
 import {EntityBase} from "./EntityBase";
 
+
 export class Variable extends EntityBase {
     
     dataset:Dataset;
@@ -10,11 +11,13 @@ export class Variable extends EntityBase {
     valueType:VALUE_TYPE;
     possibleValuesAsStrArr:string[];
     required:boolean;
+    exportLevel:number;
 
     constructor(_json:Object) {
         super(_json);
         this.name = _json['name'];
         this.required = _json['required'];
+        this.exportLevel = _json['exportLevel'];
         if (_json['dataset'] != null) {
             this.dataset = new Dataset(_json['dataset']);
         }        

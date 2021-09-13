@@ -47,6 +47,10 @@ label {
     width:100%;
 }
 
+.width-95pct {
+    width:95%;
+}
+
 .source-value-container .ui-card {
     height: 100%;
 }
@@ -145,6 +149,10 @@ button + button {
     z-index: 1000;
 }
 
+.font-size-dot8rem span{
+    font-size: .8rem;
+}
+
 // Ugly workaround, we need to specify both because some pages (home) 
 //  do not behave correctly without .processing-full-page-block-ui and on other
 //  pages (style-guide) the element looses the class `processing-full-page-block-ui`
@@ -155,7 +163,7 @@ button + button {
     font-weight: normal;
     text-decoration: inherit;
     position: absolute;
-    font-size: 10vw;
+    font-size: 5vw;
     color: grey;
     top: 58%;
     left: 56%;

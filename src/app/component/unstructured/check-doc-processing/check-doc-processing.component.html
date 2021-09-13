@@ -1,9 +1,14 @@
-<p-panel toggleable="true" styleClass="check-doc-processing-panel" 
-  [style.display]="!saved ? 'block' : 'none'" >
+<!-- <p-panel toggleable="true" styleClass="check-doc-processing-panel" 
+  [style.display]="!(saved || cancelled) ? 'block' : 'none'" 
+  > -->
+<p-panel toggleable="true" styleClass="check-doc-processing-panel" >
 
     <ng-template pTemplate="icons">
-        <button pButton [disabled]="!readyForSerialization" i18n-label="@@save" label="Enregistrer" 
+        <button pButton [disabled]="!readyForSerialization || saving" i18n-label="@@save" label="Enregistrer" 
             icon="fas fa-save" (click)="handleClickOnSaveButton($event)"></button>        
+        <button pButton i18n-label="@@cancel" label="Annuler" 
+            [disabled]="saving"
+            icon="pi pi-times" (click)="handleClickOnCancelButton($event)"></button>        
     </ng-template>
 
     <ng-template pTemplate="header">

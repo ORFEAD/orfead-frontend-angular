@@ -21,6 +21,8 @@ export class CheckDocVariablesComponent implements OnInit {
   inProgress:boolean = true;
 
   needRefresh:boolean = false;
+  processing:boolean = false;
+  disableRefreshButton:boolean = true;
 
   variables = [];
 
@@ -32,8 +34,17 @@ export class CheckDocVariablesComponent implements OnInit {
               private translationService:TranslationService) { 
     unstructuredCompIntService.manualModificationToTextElt$.subscribe( res => {
         this.needRefresh = true;
+        this.updateDisplayBooleans();
       } 
     );
+  }
+
+  updateDisplayBooleans() {
+    if (this.needRefresh && !this.processing) {
+      this.disableRefreshButton = false;
+    } else {
+      this.disableRefreshButton = true;
+    }
   }
 
   ngOnInit(): void {
@@ -74,7 +85,7 @@ export class CheckDocVariablesComponent implements OnInit {
         columnIsDisplayed:true,
         filterIsActive:false,
         minimumCharactersNeeded:2,
-        width:"10em",
+        width:"5em",
         filterValue:null,
         sorting:null // null, 1, -1
       },      
@@ -143,14 +154,30 @@ export class CheckDocVariablesComponent implements OnInit {
         filterValue:null,
         sorting:null // null, 1, -1
       },
+      {
+        field:"exportLevel",
+        header:this.translationService.getTranslation("export_level"),
+        // attributeType:"text",
+        // exactMatch:false,
+        columnIsAvailable:true,
+        columnIsDisplayed:true,
+        filterIsActive:false,
+        minimumCharactersNeeded:2,
+        width:"5em",
+        filterValue:null,
+        sorting:null // null, 1, -1
+      },
       
-  ]
+    ]
 
   }
 
   ngOnChanges(): void {
     if (this.analysis != null) {
       console.log(this.analysis);
+      this.processing = false;
+      this.needRefresh = false;
+      this.updateDisplayBooleans();
 
       // Extract the variables from the blocks the preProcessing, postProcessing
       this.variables = [];
@@ -174,9 +201,8 @@ export class CheckDocVariablesComponent implements OnInit {
           required: v.required,
           serialize: v.serialize,
           pseudoValue:null,
-        };
-
-        
+          exportLevel:v.exportLevel,
+        };        
 
         if ('pseudonymizationMapping' in v){
           variablesForTableDisplay.pseudoValue = v.pseudonymizationMapping.pseudoValue;
@@ -185,13 +211,34 @@ export class CheckDocVariablesComponent implements OnInit {
         
         this.variablesForTableDisplay.push(variablesForTableDisplay);
         // this.variablesForTableDisplay.sort((a, b) => (a.name > b.name) ? 1 : -1)
-        this.variablesForTableDisplay.sort((a, b) => (a.required < b.required) ? 1 : -1)
+        this.variablesForTableDisplay.sort((a, b) => {
+          if (a.required < b.required){
+            return 1;
+          }
+          if (a.required > b.required){
+            return -1;
+          }
+          // We want the exportLevel closer to 1 to appear first
+          if (a.exportLevel < b.exportLevel){
+            return -1;
+          }
+          if (a.exportLevel > b.exportLevel){
+            return 1;
+          }
+          if (a.name < b.name){
+            return -1;
+          }
+          if (a.name > b.name){
+            return 1;
+          }
+        })
       }      
-
     }
   }
 
   handleClickOnRefreshButton(evt) {
+    this.processing = true;
+    this.updateDisplayBooleans();
     this.unstructuredCompIntService.askTextEltsProcessing(true);
   }
   

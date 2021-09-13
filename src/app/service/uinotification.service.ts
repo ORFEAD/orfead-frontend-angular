@@ -10,30 +10,25 @@ export class UINotificationService {
   constructor(private messageService:MessageService,
               private translationService:TranslationService) { }
   
-  public notifySuccess(detail:string, summary = "i18n@@success"){
+  public notifySuccess(detail:string, 
+                       summary = this.translationService.getTranslation("i18n@@success")){
 
-    detail = this.translationService.getTranslation(detail);
-    summary = this.translationService.getTranslation(summary);
 
     this.messageService.add({severity:'success', 
                              summary: summary, 
                              detail: detail});
   }
 
-  public notifyInfo(detail:string, summary = "i18n@@info"){
-
-    detail = this.translationService.getTranslation(detail);
-    summary = this.translationService.getTranslation(summary);
-
+  public notifyInfo(detail:string, 
+                    summary = this.translationService.getTranslation("i18n@@info")){
+    
     this.messageService.add({severity:'info', 
                              summary: summary, 
                              detail: detail});
   }
 
-  public notifyWarn(detail:string, summary = "i18n@@warn"){
-
-    detail = this.translationService.getTranslation(detail);
-    summary = this.translationService.getTranslation(summary);
+  public notifyWarn(detail:string, 
+                    summary = this.translationService.getTranslation("i18n@@warn")){
 
     this.messageService.add({severity:'warn', 
                              summary: summary, 

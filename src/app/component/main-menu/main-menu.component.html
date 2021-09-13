@@ -1,8 +1,9 @@
 <!-- <app-banner></app-banner> -->
 <!-- {{translationService.allowedLanguages}} -->
 <p-menubar [model]="items">      
-    <!-- <img src="assets/img/cat.png" style="height:1em;"/> -->
-    <ng-template ngFor let-langcode [ngForOf]="translationService.allowedLanguages">
+    
+    <!-- Uncomment the following block when you want to activate the language selection -->
+    <!-- <ng-template ngFor let-langcode [ngForOf]="translationService.allowedLanguages">
         <span *ngIf="langcode !== translationService.getSupportedLanguageCode() && langcode != 'en'">
           <a href="/{{langcode}}/">{{langcode}}</a> &nbsp;
         </span>
@@ -10,8 +11,8 @@
             <a href="/">{{langcode}}</a> &nbsp;
         </span>
         <span *ngIf="langcode === translationService.getSupportedLanguageCode()">{{langcode}} &nbsp;</span>
+    </ng-template> -->
 
-      </ng-template>
     <!-- <app-processing></app-processing> -->
     <button pButton i18n-label="@@my_account" label="Mon compte" icon="fa fa-user" class="p-button-secondary" 
             [routerLink]="linkToUserAccount"></button>
@@ -19,7 +20,7 @@
   </p-menubar>
     
   
-
+<app-processing></app-processing>
 
 
 <!-- <div style="clear:both;margin-bottom: 5px;"></div> -->

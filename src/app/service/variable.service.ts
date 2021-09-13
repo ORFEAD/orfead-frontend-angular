@@ -31,6 +31,18 @@ export class VariableService {
     );
   }
 
+  getVariables(datasetId:string): Observable<Variable[]> {
+    var url = `${this.apiURL}/${datasetId}`;     
+    
+    return this.http.get<Variable[]>(url)    
+    .pipe(map( res =>             
+        this.fromJSONArray(res)
+        ))  
+    .pipe(
+      catchError(this.errorHandlerService.handleError(`getVariables()`, null))
+    );
+  }
+
   fromJSONArray(array: Array<Object>): Variable[] {
     return array.map(res => new Variable(res));
   } 
