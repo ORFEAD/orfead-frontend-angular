@@ -1,19 +1,29 @@
 <p-panel [showHeader]="false">
     <div class="p-grid">
         <div class="p-col">
-            <h3 i18n="@@choose_dataset">Choisir le dataset</h3>
-            <app-dataset-selector datasetType="unstructured"></app-dataset-selector>
+            <div class="p-grid">
+                <div class="p-col-12">
+                    <h3 i18n="@@choose_dataset">Choisir le dataset</h3>
+                    <app-dataset-selector datasetType="unstructured"></app-dataset-selector>
+                </div>
+                <div class="p-col-12">
+                    <button pButton i18n-label="@@retype_the_dataset_password" 
+                                            label="Ressaisir le mot de passe du dataset" icon="fas fa-unlock-alt" 
+                    (click)="clearDatasetPassword()"></button>
+                </div>
+            </div>
+            
         </div>
         <div class="p-col">
             <h3 i18n="@@choose_files">Choisir les fichiers à uploader</h3>
             <app-file-uploader [dataset]="dataset"></app-file-uploader>
             <div class="p-grid">
-                <div class="p-col-1">
+                <!-- <div class="p-col-1">
                     <app-spinner *ngIf="filesNamesProcessingInProgress.length > 0"></app-spinner>
-                </div>
-                <div class="p-col-11">
+                </div> -->
+                <div class="p-col-12">
                     <ul>
-                        <li *ngFor="let n of filesNamesProcessingInProgress">{{n}}</li>            
+                        <li *ngFor="let n of filesNamesProcessingInProgress">{{n.name}} [{{n.processingStatus}}]</li>            
                     </ul>                            
                 </div>
             </div>

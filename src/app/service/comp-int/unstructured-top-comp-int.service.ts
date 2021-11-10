@@ -13,7 +13,7 @@ export class UnstructuredTopCompIntService {
   private docStartedProcessingStackSource = new Subject<boolean>();
   docStartedProcessingStack$ = this.docStartedProcessingStackSource.asObservable();
 
-  private docDoneProcessingStackSource = new Subject<boolean>();
+  private docDoneProcessingStackSource = new Subject<any>();
   docDoneProcessingStack$ = this.docDoneProcessingStackSource.asObservable();
 
   constructor() { }
@@ -22,8 +22,9 @@ export class UnstructuredTopCompIntService {
     this.docRemovedFromProcessingStackSource.next(f);
   }
 
-  announceDocDoneProcessingStack(f:any) {
-    this.docDoneProcessingStackSource.next(f);
+  announceDocDoneProcessingStack(f:any, status:string) {
+    this.docDoneProcessingStackSource.next({"file": f,
+                                            "status": status});
   }
 
   announceDocStartedProcessingStack(f:any) {

@@ -7,7 +7,7 @@ export const environment = {
   apiURLForFiles: "https://api-medleg.orfead.org/",
   numberOfSecondsBetweenRefreshOfMessages: 120,
   numberOfSecondsBetweenChecksOfVersion: 120,
-  frontEndVersion:"2021-09-13.01",
+  frontEndVersion:"2021-10-01.02",
   jwt_name: "orfead_jwt",
   defaultNumberOfResults:50,
   numberOfResultsForDeals: 50,

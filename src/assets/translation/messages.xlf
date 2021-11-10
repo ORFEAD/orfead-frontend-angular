@@ -747,7 +747,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/component/unstructured/unstructured-dataset-upload/unstructured-dataset-upload.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="choose_the_export_level" datatype="html">
@@ -809,11 +809,18 @@
         </context-group>
         <note priority="1" from="description">manual_tagging</note>
       </trans-unit>
+      <trans-unit id="retype_the_dataset_password" datatype="html">
+        <source>Ressaisir le mot de passe du dataset</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/component/unstructured/unstructured-dataset-upload/unstructured-dataset-upload.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="choose_files" datatype="html">
         <source>Choisir les fichiers à uploader</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/component/unstructured/unstructured-dataset-upload/unstructured-dataset-upload.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="edit_user_invite" datatype="html">

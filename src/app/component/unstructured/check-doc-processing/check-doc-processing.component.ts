@@ -171,7 +171,9 @@ export class CheckDocProcessingComponent implements OnInit {
         this.resultOfVariablesExtractionAnalysis = res.tpl;        
 
         this.unstructuredCompIntService.announceResultOfVariablesExtraction(res.tpl);
-        this.unstructuredTopCompIntService.announceDocDoneProcessingStack(this.file);
+        this.unstructuredTopCompIntService.announceDocDoneProcessingStack(this.file,"OK");
+      } else {
+        this.unstructuredTopCompIntService.announceDocDoneProcessingStack(this.file,"NOK");
       }
     });
   }
@@ -206,11 +208,13 @@ export class CheckDocProcessingComponent implements OnInit {
           this.resultOfAnonymizationAnalysis = res.textElts;
           this.resultOfVariablesExtractionAnalysis = res.tpl;
           this.unstructuredCompIntService.announceResultOfVariablesExtraction(res.tpl);
-          this.unstructuredTopCompIntService.announceDocDoneProcessingStack(this.file);
+          this.unstructuredTopCompIntService.announceDocDoneProcessingStack(this.file,"OK");
         } else {
           this.saved = true;
         }
         
+      } else {
+        this.unstructuredTopCompIntService.announceDocDoneProcessingStack(this.file,"NOK");
       }
     });
   }

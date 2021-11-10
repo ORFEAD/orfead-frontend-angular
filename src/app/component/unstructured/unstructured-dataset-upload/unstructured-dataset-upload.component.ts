@@ -53,17 +53,8 @@ export class UnstructuredDatasetUploadComponent implements OnInit {
       dataset => {
        
         this.dataset = dataset;
-
-        const datasetPassword = localStorage.getItem(
-          Utils.getNameOfDatasetPasswordAttributeInLocalStorage(this.dataset.id)
-        );
-        if (datasetPassword == null) {
-          this.dialogService.open(DatasetPasswordComponent,
-            {header:`${this.translationService.getTranslation("dataset_password_for")}[${this.dataset.name}]`,
-             width:"70%",
-            //  height:"70%",
-             data:{dataset:this.dataset}});
-        }
+        this.checkDatasetPasswordExists();
+        
 
       }
     );
@@ -101,8 +92,11 @@ export class UnstructuredDatasetUploadComponent implements OnInit {
     // Subscribe to file that start to be processed
     this.subscriptionToDocProcessingInProgressStack = 
     this.unstructuredTopCompIntService.docStartedProcessingStack$.subscribe(
-      f => {
-        this.filesNamesProcessingInProgress.push(f["name"]);
+      f => {       
+        let _fileName = f["name"];
+        let _status = "En cours";
+        this.filesNamesProcessingInProgress.push({name:_fileName,
+                                                  processingStatus:_status});
         this.displayProcessingSpinner = true;
         }
     );
@@ -110,18 +104,39 @@ export class UnstructuredDatasetUploadComponent implements OnInit {
     // Subscribe to file being done with processing
     this.subscriptionToDocDoneProcessingStack = 
       this.unstructuredTopCompIntService.docDoneProcessingStack$.subscribe(
-        f => {
-          let idxOfFileNameDone = this.filesNamesProcessingInProgress.indexOf(f["name"]);
-          this.filesNamesProcessingInProgress.splice(idxOfFileNameDone,1);
-          // this.filesNamesProcessingInProgress = this.filesNamesProcessingInProgress.filter(x => {
-          //   x["name"] != f["name"];
-          // });
-          this.notificationService.notifyInfo(`${this.translationService.getTranslation("done_processing")}[${f["name"]}]`);
+        r => {
+          let _fileName = r["file"]["name"];
+          let _status = r["status"];
+          let idxOfFileNameDone = this.filesNamesProcessingInProgress.findIndex(x => x["name"] == _fileName);
+          this.filesNamesProcessingInProgress[idxOfFileNameDone]["processingStatus"] = _status;
+          // this.filesNamesProcessingInProgress.splice(idxOfFileNameDone,1);
+          this.notificationService.notifyInfo(`${this.translationService.getTranslation("done_processing")}[${_fileName}]`);
           this.displayProcessingSpinner = false;
           }
       );
 
   }  
+
+  checkDatasetPasswordExists() {
+    const datasetPassword = localStorage.getItem(
+      Utils.getNameOfDatasetPasswordAttributeInLocalStorage(this.dataset.id)
+    );
+    if (datasetPassword == null) {
+      this.dialogService.open(DatasetPasswordComponent,
+        {header:`${this.translationService.getTranslation("dataset_password_for")}[${this.dataset.name}]`,
+         width:"70%",
+        //  height:"70%",
+         data:{dataset:this.dataset}});
+    }
+  }
+
+  clearDatasetPassword() {
+    localStorage.removeItem(
+      Utils.getNameOfDatasetPasswordAttributeInLocalStorage(this.dataset.id)
+    );
+    this.checkDatasetPasswordExists();
+  }
+  
 
   getDatasetUnstructuredConf() {
     this.datasetUnstructuredConfService.getDatasetUnstructuredConfFromDatasetId(this.dataset.id).subscribe(res => {
